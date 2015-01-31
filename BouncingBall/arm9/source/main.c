@@ -93,6 +93,11 @@ int main ( void )
 	        }
 	    }
 
+	    /* Blend BG1 */
+
+	    REG_BLDCNT = BLEND_ALPHA | BLEND_SRC_BG1 | BLEND_DST_BACKDROP;
+    	REG_BLDALPHA = (4) + (16<<8);
+
 	}
 
 	while(1) {
