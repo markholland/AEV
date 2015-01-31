@@ -4,9 +4,18 @@ int main ( void )
 {
 	irqInit();					// initialize interrupts
 	irqEnable(  IRQ_VBLANK);	// enable vblank interrupt
-	while(1)
-		swiWaitForVBlank();		// wait for next VBlank AND halt the cpu
+	
+	while(1) {
+		/* Rendering period: */
+		// update game objects
+		update_logic();
 
-	return 0;
+		// wait for the vblank period
+		swiWaitForVBlank();		// halts the cpu
+
+		/* VBlank Period: */
+		// move the graphics around
+		update_graphics();
+	}
 }
 
