@@ -26,6 +26,9 @@
 #define backdrop_colour   RGB8( 190, 225, 255 )
 #define pal2bgram(p)      (BG_PALETTE + (p) * 16)
 
+#define bg0map    ((u16*)BG_MAP_RAM(1))
+#define bg1map    ((u16*)BG_MAP_RAM(2))
+
 int main ( void )
 {
 	irqInit();					// initialize interrupts
@@ -50,6 +53,46 @@ int main ( void )
 
 		// set backdrop color
 		BG_PALETTE[0] = backdrop_colour;
+
+		/* Bricks */
+
+		// libnds prefixes the register names with REG_
+		REG_BG0CNT = BG_MAP_BASE(1);
+		REG_BG1CNT = BG_MAP_BASE(2);
+		REG_BG0VOFS = 112; // offset down vertically 112 pixels
+
+		// Clear brick tilemap to zero
+		for( n = 0; n < 1024; n++ )
+        	bg0map[n] = 0;
+
+        // Draw 32x6 image of bricks
+        int x, y;
+	    for( x = 0; x < 32; x++ )
+	    {
+	        for( y = 0; y < 6; y++ )
+	        {
+	            // magical formula to calculate if the tile needs to be flipped.
+	            int hflip = (x & 1) ^ (y & 1);
+	            
+	            // set the tilemap entry
+	            bg0map[x + y * 32] = tile_brick | (hflip << 10) | (pal_bricks << 12);
+	        }
+	    }
+
+	    /* Gradient */
+
+	    for( n = 0; n < 1024; n++ )
+        	bg1map[n] = 0;
+
+        for( x = 0; x < 32; x++ )
+	    {
+	        for( y = 0; y < 8; y++ )
+	        {
+	            int tile = tile_gradient + y;
+	            bg1map[ x + y * 32 ] = tile | (pal_gradient << 12);
+	        }
+	    }
+
 	}
 
 	while(1) {
@@ -58,7 +101,7 @@ int main ( void )
 
 		// wait for the vblank period
 		swiWaitForVBlank();
-		videoSetMode( MODE_0_2D );		
+		videoSetMode( MODE_0_2D | DISPLAY_BG0_ACTIVE | DISPLAY_BG1_ACTIVE );
 	}
 
 	return 0;
