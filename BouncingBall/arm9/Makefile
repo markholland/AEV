@@ -89,6 +89,7 @@ CPPFILES := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
 SFILES   := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
 PNGFILES := $(foreach dir,$(GRAPHICS),$(notdir $(wildcard $(dir)/*.png)))
 BINFILES := $(foreach dir,$(DATA),$(notdir $(wildcard $(dir)/*.*)))
+PNGFILES	:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.png)))
 
 # prepare NitroFS directory
 ifneq ($(strip $(NITRO)),)
@@ -173,6 +174,13 @@ $(OUTPUT).elf: $(OFILES)
 
 # need to build soundbank first
 $(OFILES): $(SOUNDBANK)
+
+#---------------------------------------------------------------------------------
+# GRIT rule for converting the PNG files
+#---------------------------------------------------------------------------------
+%.s %.h : %.png %.grit
+#---------------------------------------------------------------------------------
+	@grit $< -fts
 
 #---------------------------------------------------------------------------------
 # rule to build solution from music files

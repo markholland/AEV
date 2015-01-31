@@ -1,5 +1,4 @@
-main.o: \
- /home/markholland/devkitPro/examples/nds/templates/arm9/source/main.c \
+main.o: /media/psf/Home/Documents/AEV/BouncingBall/arm9/source/main.c \
  /home/markholland/devkitPro/libnds/include/nds.h \
  /home/markholland/devkitPro/libnds/include/nds/libversion.h \
  /home/markholland/devkitPro/libnds/include/nds/ndstypes.h \
