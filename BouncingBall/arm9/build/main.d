@@ -55,7 +55,10 @@ main.o: /media/psf/Home/Documents/AEV/BouncingBall/arm9/source/main.c \
  /home/markholland/devkitPro/libnds/include/nds/arm9/sprite.h \
  /home/markholland/devkitPro/libnds/include/nds/arm9/trig_lut.h \
  /home/markholland/devkitPro/libnds/include/nds/arm9/video.h \
- /home/markholland/devkitPro/libnds/include/nds/arm9/videoGL.h
+ /home/markholland/devkitPro/libnds/include/nds/arm9/videoGL.h \
+ /media/psf/Home/Documents/AEV/BouncingBall/arm9/build/gfx_ball.h \
+ /media/psf/Home/Documents/AEV/BouncingBall/arm9/build/gfx_brick.h \
+ /media/psf/Home/Documents/AEV/BouncingBall/arm9/build/gfx_gradient.h
 
 /home/markholland/devkitPro/libnds/include/nds.h:
 
@@ -170,3 +173,9 @@ main.o: /media/psf/Home/Documents/AEV/BouncingBall/arm9/source/main.c \
 /home/markholland/devkitPro/libnds/include/nds/arm9/video.h:
 
 /home/markholland/devkitPro/libnds/include/nds/arm9/videoGL.h:
+
+/media/psf/Home/Documents/AEV/BouncingBall/arm9/build/gfx_ball.h:
+
+/media/psf/Home/Documents/AEV/BouncingBall/arm9/build/gfx_brick.h:
+
+/media/psf/Home/Documents/AEV/BouncingBall/arm9/build/gfx_gradient.h:
