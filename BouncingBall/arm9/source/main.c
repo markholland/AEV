@@ -48,12 +48,64 @@ typedef struct t_spriteEntry
 
 #define sprites ((spriteEntry*)OAM)
 
-int main ( void )
-{
-	irqInit();					// initialize interrupts
-	irqEnable(  IRQ_VBLANK);	// enable vblank interrupt
+#include "ball.h"
 
-	void setupGraphics( void ) {
+ball g_ball;
+
+//-----------------------------------------------------------
+// setup interrupt handler with vblank irq enabled
+//-----------------------------------------------------------
+void setupInterrupts( void )
+//-----------------------------------------------------------
+{
+    // initialize interrupt handler
+    irqInit();
+	
+    // enable vblank interrupt (required for swiWaitForVBlank!)
+    irqEnable( IRQ_VBLANK );
+}
+
+//-----------------------------------------------------------
+// reset ball attributes
+//-----------------------------------------------------------
+void resetBall( void )
+//-----------------------------------------------------------
+{
+    // use sprite index 0 (0->127)
+    g_ball.sprite_index = 0;
+	
+    // use affine matrix 0 (0->31)
+    g_ball.sprite_affine_index = 0;
+	
+    // X = 128.0
+    g_ball.x = 128 << 8;
+    
+    // Y = 64.0
+    g_ball.y = 64 << 8;
+   
+    // start X velocity a bit to the right
+    g_ball.xvel = 100 << 4;
+   
+    // reset Y velocity
+    g_ball.yvel = 0;
+}
+
+//-----------------------------------------------------------
+// update graphical information (call during vblank)
+//-----------------------------------------------------------
+void updateGraphics( void )
+//-----------------------------------------------------------
+{
+    // update ball sprite, camera = 0, 0
+    ballRender( &g_ball, 0, 0 );
+}
+
+void processLogic( void ) {
+
+
+}
+
+void setupGraphics( void ) {
 		vramSetBankE( VRAM_E_MAIN_BG ); 	// set vram E to use main engine BG setting
 		vramSetBankF( VRAM_F_MAIN_SPRITE ); // set vram F to use main engine OBJ setting
 		
@@ -130,32 +182,37 @@ int main ( void )
     	for( n = 0; n < 128; n++ )
         	sprites[n].attr0 = ATTR0_DISABLED;
 
-        // code to test out the sprite engine
-	    for( n = 0; n < 50; n++ )
-	    {
-	        // attribute0: set vertical position 0->screen_height-sprite_height, 
-	        // other default options will be okay (default == zeroed)
-	        sprites[n].attr0 = rand() % (192 - 16);
-
-	        // attribute1: set horizontal position 0->screen_width-sprite_width
-	        // also set 16x16 size mode
-	        sprites[n].attr1 = (rand() % (256 - 16)) + ATTR1_SIZE_16;
-
-	        // attribute2: select tile number and palette number
-	        sprites[n].attr2 = tiles_ball + (pal_ball << 12);
-	    }
-
+        
 	}
 
-	while(1) {
-		
-		setupGraphics();
 
-		// wait for the vblank period
-		swiWaitForVBlank();
-		videoSetMode( MODE_0_2D | DISPLAY_BG0_ACTIVE | DISPLAY_BG1_ACTIVE | DISPLAY_SPR_ACTIVE | DISPLAY_SPR_1D_LAYOUT );
-	}
 
-	return 0;
+
+//-----------------------------------------------------------
+// program entry point
+//-----------------------------------------------------------
+int main( void )
+//-----------------------------------------------------------
+{
+    // setup things
+    setupInterrupts();
+    setupGraphics();
+    resetBall();
+
+    videoSetMode( MODE_0_2D | DISPLAY_BG0_ACTIVE | DISPLAY_BG1_ACTIVE | DISPLAY_SPR_ACTIVE | DISPLAY_SPR_1D_LAYOUT );
+
+    // start main loop
+    while( 1 )
+    {
+        // update game logic
+        processLogic();
+
+        // wait for new frame
+        swiWaitForVBlank();
+
+        // update graphics
+        updateGraphics();
+    }
+    return 0;
 }
 
