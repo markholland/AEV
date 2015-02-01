@@ -29,6 +29,25 @@
 #define bg0map    ((u16*)BG_MAP_RAM(1))
 #define bg1map    ((u16*)BG_MAP_RAM(2))
 
+/* sprite */
+
+#define tiles_ball      0 // ball tiles (16x16 tile 0->3)
+
+#define tile2objram(t) (SPRITE_GFX + (t) * 16)
+
+#define pal2objram(p) (SPRITE_PALETTE + (p) * 16)
+#define pal_ball      0 // ball palette (entry 0->15)
+
+typedef struct t_spriteEntry
+{
+    u16 attr0;
+    u16 attr1;
+    u16 attr2;
+    u16 affine_data;
+} spriteEntry;
+
+#define sprites ((spriteEntry*)OAM)
+
 int main ( void )
 {
 	irqInit();					// initialize interrupts
@@ -98,6 +117,34 @@ int main ( void )
 	    REG_BLDCNT = BLEND_ALPHA | BLEND_SRC_BG1 | BLEND_DST_BACKDROP;
     	REG_BLDALPHA = (4) + (16<<8);
 
+
+    	/* Sprite */
+
+    	// copy graphic
+    	dmaCopyHalfWords( 3, gfx_ballTiles, tile2objram(tiles_ball), gfx_ballTilesLen );
+
+    	// copy palette
+    	dmaCopyHalfWords( 3, gfx_ballPal, pal2objram(pal_ball), gfx_ballPalLen );
+
+    	// disable sprite entries
+    	for( n = 0; n < 128; n++ )
+        	sprites[n].attr0 = ATTR0_DISABLED;
+
+        // code to test out the sprite engine
+	    for( n = 0; n < 50; n++ )
+	    {
+	        // attribute0: set vertical position 0->screen_height-sprite_height, 
+	        // other default options will be okay (default == zeroed)
+	        sprites[n].attr0 = rand() % (192 - 16);
+
+	        // attribute1: set horizontal position 0->screen_width-sprite_width
+	        // also set 16x16 size mode
+	        sprites[n].attr1 = (rand() % (256 - 16)) + ATTR1_SIZE_16;
+
+	        // attribute2: select tile number and palette number
+	        sprites[n].attr2 = tiles_ball + (pal_ball << 12);
+	    }
+
 	}
 
 	while(1) {
@@ -106,7 +153,7 @@ int main ( void )
 
 		// wait for the vblank period
 		swiWaitForVBlank();
-		videoSetMode( MODE_0_2D | DISPLAY_BG0_ACTIVE | DISPLAY_BG1_ACTIVE );
+		videoSetMode( MODE_0_2D | DISPLAY_BG0_ACTIVE | DISPLAY_BG1_ACTIVE | DISPLAY_SPR_ACTIVE | DISPLAY_SPR_1D_LAYOUT );
 	}
 
 	return 0;
