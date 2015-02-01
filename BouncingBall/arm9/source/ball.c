@@ -3,9 +3,42 @@
 
 #define c_radius (8<<8)
 
+//-----------------------------------------------------------------
+// update ball object (call once per frame)
+//-----------------------------------------------------------------
 void ballUpdate( ball* b )
+//-----------------------------------------------------------------
 {
+    // add X velocity to X position
+    b->x += (b->xvel>>4);
+
+     // apply air friction to X velocity
+    b->xvel = (b->xvel * (256-c_air_friction)) >> 8;
     
+    // clamp X velocity to the limits
+    b->xvel = clampint( b->xvel, -max_xvel, max_xvel );
+
+    // add gravity to Y velocity
+    b->yvel += c_gravity;
+    
+    // add Y velocity to Y position
+    b->y += (b->yvel);
+
+    if( b->y + c_radius >= c_platform_level )
+    {
+        // apply ground friction to X velocity
+        b->xvel = (b->xvel * (256-c_ground_friction)) >> 8;
+        
+        // mount Y on platform
+        b->y = c_platform_level - c_radius;
+            
+        // negate Y velocity, also apply the bounce damper
+        b->yvel = -(b->yvel * (256-c_bounce_damper)) >> 8;
+        
+        // clamp Y to mininum velocity (minimum after bouncing, so the ball does not settle)
+        if( b->yvel > -min_yvel )
+            b->yvel = -min_yvel;
+    }
 }
 
 void ballRender( ball* b, int camera_x, int camera_y )

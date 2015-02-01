@@ -48,9 +48,18 @@ typedef struct t_spriteEntry
 
 #define sprites ((spriteEntry*)OAM)
 
+/* The ball */
 #include "ball.h"
 
 ball g_ball;
+
+/* Key input */
+#define x_tweak    (2<<8)  // for user input
+#define y_tweak    25      // for user input
+
+/* camera */
+int g_camera_x;
+int g_camera_y;
 
 //-----------------------------------------------------------
 // setup interrupt handler with vblank irq enabled
@@ -88,21 +97,6 @@ void resetBall( void )
    
     // reset Y velocity
     g_ball.yvel = 0;
-}
-
-//-----------------------------------------------------------
-// update graphical information (call during vblank)
-//-----------------------------------------------------------
-void updateGraphics( void )
-//-----------------------------------------------------------
-{
-    // update ball sprite, camera = 0, 0
-    ballRender( &g_ball, 0, 0 );
-}
-
-void processLogic( void ) {
-
-
 }
 
 void setupGraphics( void ) {
@@ -185,8 +179,72 @@ void setupGraphics( void ) {
         
 	}
 
+void processInput( void )
+{
+    scanKeys();
 
+    int keysh = keysHeld();
+    // process user input
+    if( keysh & KEY_UP )      // check if UP is pressed
+    {
+        // tweak y velocity of ball
+        g_ball.yvel -= y_tweak;
+    }
+    if( keysh & KEY_DOWN )    // check if DOWN is pressed
+    {
+        // tweak y velocity of ball
+        g_ball.yvel += y_tweak;
+    }
+    if( keysh & KEY_LEFT )    // check if LEFT is pressed
+    {
+        // tweak x velocity
+        g_ball.xvel -= x_tweak;
+    }
+    if( keysh & KEY_RIGHT )   // check if RIGHT is pressed
+    {
+        // tweak y velocity
+        g_ball.xvel += x_tweak;
+    }
+}
 
+void updateCamera( void )
+{
+    // cx = desired camera X
+    int cx = ((g_ball.x)) - (128 << 8);
+    
+    // dx = difference between desired and current position
+    int dx;
+    dx = cx - g_camera_x;
+	
+    // 10 is the minimum threshold
+    if( dx > 10 || dx < -10 )
+        dx = (dx * 50) >> 10; // scale the value by some amount
+	
+    // add the value to the camera X position
+    g_camera_x += dx;
+	
+    // camera Y is always 0
+    g_camera_y  = 0;
+}
+
+//-----------------------------------------------------------
+// update graphical information (call during vblank)
+//-----------------------------------------------------------
+void updateGraphics( void )
+//-----------------------------------------------------------
+{
+    // update ball sprite
+    ballRender( &g_ball, g_camera_x >> 8, g_camera_y >> 8 );
+    
+    REG_BG0HOFS = g_camera_x >> 8;
+}
+
+void processLogic( void ) {
+
+	processInput();
+	ballUpdate( &g_ball );
+	updateCamera();
+}
 
 //-----------------------------------------------------------
 // program entry point
