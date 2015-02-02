@@ -27,17 +27,29 @@ void ballUpdate( ball* b )
     if( b->y + c_radius >= c_platform_level )
     {
         // apply ground friction to X velocity
+        // (yes this may be done multiple times)
         b->xvel = (b->xvel * (256-c_ground_friction)) >> 8;
         
-        // mount Y on platform
-        b->y = c_platform_level - c_radius;
+        // check if the ball has been squished to minimum height
+        if( b->y > c_platform_level - min_height )
+        {
+            // mount Y on platform
+            b->y = c_platform_level - min_height;
             
-        // negate Y velocity, also apply the bounce damper
-        b->yvel = -(b->yvel * (256-c_bounce_damper)) >> 8;
+            // negate Y velocity, also apply the bounce damper
+            b->yvel = -(b->yvel * (256-c_bounce_damper)) >> 8;
         
-        // clamp Y to mininum velocity (minimum after bouncing, so the ball does not settle)
-        if( b->yvel > -min_yvel )
-            b->yvel = -min_yvel;
+            // clamp Y to mininum velocity (minimum after bouncing, so the ball does not settle)
+            if( b->yvel > -min_yvel )
+                b->yvel = -min_yvel;
+        }
+       
+        // calculate the height
+        b->height = (c_platform_level - b->y) * 2;
+    }
+    else
+    {
+        b->height = c_diam << 8;
     }
 }
 
@@ -46,8 +58,8 @@ void ballRender( ball* b, int camera_x, int camera_y )
     u16* sprite = OAM + b->sprite_index * 4;
 
     int x, y;
-    x = ((b->x - c_radius) >> 8) - camera_x;
-    y = ((b->y - c_radius) >> 8) - camera_y;
+    x = ((b->x - c_radius * 2) >> 8) - camera_x;
+    y = ((b->y - c_radius * 2) >> 8) - camera_y;
 
     // check if renedering out of bounds before continuing
     if( x <= -16 || y <= -16 || x >= 256 || y >= 192 )
@@ -58,7 +70,19 @@ void ballRender( ball* b, int camera_x, int camera_y )
         return;
     }
 
-    sprite[0] = y & 255;
-    sprite[1] = (x & 511) | ATTR1_SIZE_16;
+    sprite[0] = (y & 255) | ATTR0_ROTSCALE_DOUBLE;
+    sprite[1] = (x & 511) | ATTR1_SIZE_16 | ATTR1_ROTDATA( b->sprite_affine_index );
     sprite[2] = 0;
+
+    u16* affine;
+    affine = OAM + b->sprite_affine_index * 16 + 3;
+    affine[4] = 0; // PB and PC aren't used with scaling
+    affine[8] = 0;
+
+    int pa = (b->height * (65536/c_diam)) >> 16;
+    int pd = 65536 / pa;
+
+    affine[0] = pa;
+    affine[12] = pd;
+    
 }
