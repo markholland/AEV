@@ -21,7 +21,7 @@ void MoveStar(Star* star) {
 	star->y += star->speed/rand() % 4 + 1;
 	//iprintf("pos:%d",star->x);
 	if(star->x >= SCREEN_WIDTH || star->x >= SCREEN_HEIGHT) {
-		star->color = RGB15(31,31,31); 
+		star->color = RGB15(rand() % 31 + 1,rand() % 31 + 1,rand() % 31 + 1);
 		star->x = 0;
 		star->y = rand() % 192; 
 		star->speed = rand() % 4 + 1;
@@ -38,7 +38,7 @@ void ClearScreen(void) {
 void InitStars(void) {
 	int i;
 	for(i = 0; i < NUM_STARS; i++) {
-		stars[i].color = RGB15(31,31,31); 
+		stars[i].color = RGB15(rand() % 31 + 1,rand() % 31 + 1,rand() % 31 + 1); 
 		stars[i].x = rand() % 256; 
 		stars[i].y = rand() % 192;
 		stars[i].speed = rand() % 4 + 1;
