@@ -1,0 +1,9 @@
+comprobado existencia de copias locales de la documentacion y los ejemplos.
+
+console.h
+
+La interfaz por defecto utiliza la pantalla sub con ~15kiB del banco vram C(empezando en 0 de tile) y 2KiB de map en map base 30.
+
+Revisado console.h, nos puede interesar la posibilidad de usar fuentes custom.
+
+
