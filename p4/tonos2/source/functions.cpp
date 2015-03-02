@@ -51,20 +51,20 @@ void timerCallBack(void)
 
 	switch(selected) {
 		case 0:
-			iprintf("%sFrequency selected\n\n", Color_Green);
+			iprintf("-%s Frequency selected\n\n", Color_Green);
 			break;
 		case 1:
-			iprintf("%sVolume selected\n\n", Color_Red);
+			iprintf("-%s Volume selected\n\n", Color_Red);
 			break;
 		case 2:
-			iprintf("%sPan selected\n\n", Color_Yellow);
+			iprintf("-%s Pan selected\n\n", Color_Yellow);
 			break;
 	}
 
 	if(type) {
-		iprintf("%sPlaying Noise with:\nfrequency = %s%dHz\n%svolume = %s%d\n%span = %s%d%s",Color_Text, Color_Green, freq, Color_Text, Color_Red, volume, Color_Text, Color_Yellow, pan, Color_Text);
+		iprintf("%sPlaying Noise with:\n\n\tfrequency = %s%dHz\n\t%svolume = %s%d\n\t%span = %s%d%s",Color_Text, Color_Green, freq, Color_Text, Color_Red, volume, Color_Text, Color_Yellow, pan, Color_Text);
 	} else {
-		iprintf("%sPlaying PSG with:\nfrequency = %s%dHz\n%svolume = %s%d\n%span = %s%d%s",Color_Text, Color_Green, freq, Color_Text, Color_Red, volume, Color_Text, Color_Yellow, pan, Color_Text);
+		iprintf("%sPlaying PSG with:\n\n\tfrequency = %s%dHz\n\t%svolume = %s%d\n\t%span = %s%d%s",Color_Text, Color_Green, freq, Color_Text, Color_Red, volume, Color_Text, Color_Yellow, pan, Color_Text);
 	}
 
 	if(play) {
