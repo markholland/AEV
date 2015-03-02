@@ -253,400 +253,401 @@ Linker script and memory map
 .plt
  *(.plt)
 
-.text           0x02000250    0x14118
+.text           0x02000250    0x14368
  *(EXCLUDE_FILE(*.itcm*) .text)
  .text          0x02000250        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/ds_arm9_crt0.o
  .text          0x02000250        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crti.o
  .text          0x02000250      0x108 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
- .text          0x02000358      0x254 functions.o
+ .text          0x02000358      0x468 functions.o
                 0x02000358                timerCallBack()
-                0x020003fc                topScreenAndConsole()
-                0x0200043c                waitfor(int)
-                0x02000498                playPSG()
-                0x02000560                playNoise()
- .text          0x020005ac        0x0 main.o
- .text          0x020005ac        0x0 personalData.o
- .text          0x020005ac     0x116c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
-                0x02000818                nocash_write
-                0x02000890                con_write
-                0x02000dc4                consoleGetDefault
-                0x02000dd0                consoleLoadFont
-                0x02001138                consoleInit
-                0x02001364                consoleSelect
-                0x02001374                consoleSetFont
-                0x02001394                consoleDebugInit
-                0x020013e8                consoleDemoInit
-                0x020015f0                consolePrintChar
-                0x020016e8                consoleClear
-                0x020016f8                consoleSetWindow
- .text          0x02001718       0xf4 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
-                0x02001718                scanKeys
-                0x02001784                keysHeld
-                0x02001790                keysDown
-                0x020017a0                keysDownRepeat
-                0x020017b0                keysSetRepeat
-                0x020017c8                keysUp
-                0x020017d8                keysCurrent
- .text          0x0200180c      0x208 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
-                0x0200180c                micBufferHandler
-                0x02001840                soundEnable
-                0x02001850                soundDisable
-                0x02001860                soundPlayPSG
-                0x02001894                soundPlayNoise
-                0x020018c8                soundPlaySample
-                0x02001930                soundPause
-                0x02001944                soundKill
-                0x02001958                soundResume
-                0x0200196c                soundSetVolume
-                0x02001980                soundSetPan
-                0x02001990                soundSetFreq
-                0x020019a4                soundSetWaveDuty
-                0x020019b8                soundMicRecord
-                0x02001a04                soundMicOff
- .text          0x02001a14      0x19c /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
-                0x02001a14                initSystem
- .text          0x02001bb0      0xcb8 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
-                0x02001e74                fifoSetValue32Handler
-                0x02001ee8                fifoSendAddress
-                0x02001f14                fifoSendValue32
-                0x02001f50                fifoSendDatamsg
-                0x02001fc4                fifoGetAddress
-                0x02002030                fifoSetAddressHandler
-                0x020020a4                fifoGetValue32
-                0x020020b8                fifoGetDatamsg
-                0x0200256c                fifoSetDatamsgHandler
-                0x02002600                fifoCheckAddress
-                0x02002624                fifoCheckDatamsg
-                0x02002648                fifoCheckDatamsgLength
-                0x02002678                fifoCheckValue32
-                0x0200269c                fifoInit
- .text          0x02002868      0x244 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
-                0x02002868                irqDummy
-                0x0200286c                irqSet
-                0x020028d8                irqInit
-                0x02002924                irqInitHandler
-                0x02002954                irqEnable
-                0x020029b8                irqDisable
-                0x02002a1c                irqClear
- .text          0x02002aac       0x5c /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
-                0x02002aac                systemErrorExit
-                0x02002ab0                __libnds_exit
- .text          0x02002b08      0x1b4 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
-                0x02002b08                timerStart
-                0x02002b50                timerElapsed
-                0x02002b80                timerPause
-                0x02002bc0                timerStop
-                0x02002bfc                cpuStartTiming
-                0x02002c38                cpuGetTiming
-                0x02002c74                cpuEndTiming
- .text          0x02002cbc      0x1b4 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
-                0x02002cbc                __libnds_mpu_setup
-                0x02002dfc                memCached
-                0x02002e14                memUncached
- .text          0x02002e70       0x70 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
-                0x02002e70                swiDelay
-                0x02002e74                swiIntrWait
-                0x02002e78                swiWaitForVBlank
-                0x02002e7c                swiSleep
-                0x02002e80                swiChangeSoundBias
-                0x02002e84                swiDivide
-                0x02002e88                swiRemainder
-                0x02002e8e                swiDivMod
-                0x02002e9a                swiCopy
-                0x02002e9e                swiFastCopy
-                0x02002ea2                swiSqrt
-                0x02002ea6                swiCRC16
-                0x02002eaa                swiIsDebugger
-                0x02002eae                swiUnpackBits
-                0x02002eb2                swiDecompressLZSSWram
-                0x02002eb6                swiDecompressLZSSVramNTR
-                0x02002eba                swiDecompressLZSSVramTWL
-                0x02002ebe                swiDecompressHuffman
-                0x02002ec2                swiDecompressRLEWram
-                0x02002ec6                swiDecompressRLEVram
-                0x02002eca                swiWaitForIRQ
-                0x02002ece                swiDecodeDelta8
-                0x02002ed2                swiDecodeDelta16
-                0x02002ed6                swiSetHaltCR
- .text          0x02002ee0       0xa4 /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
-                0x02002ee0                nocashWrite
-                0x02002ee2                nocashMessage
- .text          0x02002f84        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
- *fill*         0x02002f84        0xc ff
- .text          0x02002f90       0x30 /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
-                0x02002f90                swiSoftReset
- .text          0x02002fc0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
- .text          0x02002fc0      0x3bc /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
-                0x02002fc0                bgIsText
-                0x02002fcc                checkIfText
-                0x02003024                bgUpdate
-                0x02003118                bgInit_call
-                0x02003240                bgInitSub_call
- .text          0x0200337c      0x140 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
-                0x0200337c                setSDcallback
-                0x02003388                systemValueHandler
-                0x020033d0                systemMsgHandler
-                0x02003420                systemSleep
-                0x02003438                powerOn
-                0x02003464                powerOff
-                0x0200348c                ledBlink
-                0x0200349c                getBatteryLevel
- .text          0x020034bc      0x3a8 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
-                0x020034bc                asinComp
-                0x020034e0                sinLutLookup
-                0x02003518                sinLerp
-                0x020035a8                cosLerp
-                0x02003664                tanLutLookup
-                0x0200369c                tanLerp
-                0x02003744                asinLerp
-                0x020037c0                acosLerp
-                0x0200383c                atanComp
- .text          0x02003864      0x1f8 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
-                0x02003864                vramSetPrimaryBanks
-                0x020038a8                vramSetMainBanks
-                0x020038ec                vramSetBanks_EFG
-                0x02003924                vramRestorePrimaryBanks
-                0x02003930                vramRestoreMainBanks
-                0x0200393c                vramRestoreBanks_EFG
-                0x02003948                setBrightness
-                0x02003988                vramDefault
- .text          0x02003a5c      0x148 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_divsi3.o)
-                0x02003a5c                __aeabi_idiv
-                0x02003a5c                __divsi3
-                0x02003b84                __aeabi_idivmod
- .text          0x02003ba4        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_dvmd_tls.o)
-                0x02003ba4                __aeabi_ldiv0
-                0x02003ba4                __aeabi_idiv0
- .text          0x02003ba8       0x84 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-bsearch.o)
-                0x02003ba8                bsearch
- .text          0x02003c2c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
- .text          0x02003c2c       0x80 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-init.o)
-                0x02003c2c                __libc_init_array
- .text          0x02003cac       0x74 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-iprintf.o)
-                0x02003cac                iprintf
-                0x02003cec                _iprintf_r
- .text          0x02003d20       0xf0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memcpy-stub.o)
-                0x02003d20                memcpy
- .text          0x02003e10      0x174 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-setvbuf.o)
-                0x02003e10                setvbuf
- .text          0x02003f84      0x100 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-siscanf.o)
-                0x02003f84                siscanf
-                0x02004004                _siscanf_r
- .text          0x02004084       0xd8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-stdio.o)
-                0x02004084                __sread
-                0x020040b8                __seofread
-                0x020040c0                __swrite
-                0x02004118                __sseek
-                0x02004148                __sclose
- .text          0x0200415c       0x60 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strlen.o)
-                0x0200415c                strlen
- .text          0x020041bc     0x237c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiscanf.o)
-                0x020041bc                _sungetc_r
-                0x020042b0                __ssrefill_r
-                0x0200431c                _sfread_r
-                0x020043f4                __ssvfiscanf_r
- .text          0x02006538      0x24c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ungetc.o)
-                0x02006538                __submore
-                0x020065e8                _ungetc_r
-                0x0200676c                ungetc
- .text          0x02006784     0x3c00 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-vfiprintf.o)
-                0x02007090                __sprint_r
-                0x020070a8                _vfiprintf_r
-                0x0200a2b0                vfiprintf
- .text          0x0200a384      0x138 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcrtomb.o)
-                0x0200a384                _wcrtomb_r
-                0x0200a41c                wcrtomb
- .text          0x0200a4bc       0x60 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcsrtombs.o)
-                0x0200a4bc                _wcsrtombs_r
-                0x0200a4e0                wcsrtombs
- .text          0x0200a51c      0x3cc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wctomb_r.o)
-                0x0200a51c                __utf8_wctomb
-                0x0200a630                _wctomb_r
-                0x0200a680                __ascii_wctomb
-                0x0200a6a8                __sjis_wctomb
-                0x0200a734                __eucjp_wctomb
-                0x0200a808                __jis_wctomb
- .text          0x0200a8e8      0x160 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wsetup.o)
-                0x0200a8e8                __swsetup_r
- .text          0x0200aa48       0x18 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ctype_.o)
-                0x0200aa48                __set_ctype
- .text          0x0200aa60      0x2d0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fflush.o)
-                0x0200aa60                __sflush_r
-                0x0200aca0                _fflush_r
-                0x0200acf4                fflush
- .text          0x0200ad30      0x350 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-findfp.o)
-                0x0200ad40                _cleanup_r
-                0x0200aeb8                __sfmoreglue
-                0x0200af08                __sfp
-                0x0200aff4                _cleanup
-                0x0200b018                __sinit
-                0x0200b028                __sfp_lock_acquire
-                0x0200b02c                __sfp_lock_release
-                0x0200b030                __sinit_lock_acquire
-                0x0200b034                __sinit_lock_release
-                0x0200b038                __fp_lock_all
-                0x0200b05c                __fp_unlock_all
- .text          0x0200b080      0x190 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fputwc.o)
-                0x0200b080                _fputwc_r
-                0x0200b1cc                fputwc
- .text          0x0200b210      0x3bc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-freer.o)
-                0x0200b210                _malloc_trim_r
-                0x0200b310                _free_r
- .text          0x0200b5cc      0x4ec /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fvwrite.o)
-                0x0200b5cc                __sfvwrite_r
- .text          0x0200bab8      0x110 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fwalk.o)
-                0x0200bab8                _fwalk
-                0x0200bb3c                _fwalk_reent
- .text          0x0200bbc8       0x7c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-iswspace.o)
-                0x0200bbc8                iswspace
- .text          0x0200bc44      0x280 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-jp2uc.o)
-                0x0200be48                _jp2uc
- .text          0x0200bec4      0xd40 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-locale.o)
-                0x0200c894                _setlocale_r
-                0x0200cb9c                __locale_charset
-                0x0200cba8                __locale_mb_cur_max
-                0x0200cbb8                __locale_msgcharset
-                0x0200cbc4                __locale_cjk_lang
-                0x0200cbd4                _localeconv_r
-                0x0200cbe0                setlocale
-                0x0200cbf8                localeconv
- .text          0x0200cc04      0x168 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-makebuf.o)
-                0x0200cc04                __smakebuf_r
- .text          0x0200cd6c       0x40 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-malloc.o)
-                0x0200cd6c                malloc
-                0x0200cd8c                free
- .text          0x0200cdac      0x724 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mallocr.o)
-                0x0200cdac                _malloc_r
- .text          0x0200d4d0      0x14c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbrtowc.o)
-                0x0200d4d0                _mbrtowc_r
-                0x0200d574                mbrtowc
- .text          0x0200d61c      0x784 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbtowc_r.o)
-                0x0200d61c                __utf8_mbtowc
-                0x0200d920                _mbtowc_r
-                0x0200d974                __ascii_mbtowc
-                0x0200d9c0                __sjis_mbtowc
-                0x0200da9c                __eucjp_mbtowc
-                0x0200dbec                __jis_mbtowc
- .text          0x0200dda0      0x118 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memchr-stub.o)
-                0x0200dda0                memchr
- .text          0x0200deb8      0x12c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memmove.o)
-                0x0200deb8                memmove
- .text          0x0200dfe4       0xf4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memset.o)
-                0x0200dfe4                memset
- .text          0x0200e0d8        0x8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mlock.o)
-                0x0200e0d8                __malloc_lock
-                0x0200e0dc                __malloc_unlock
- .text          0x0200e0e0      0x4dc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-reallocr.o)
-                0x0200e0e0                _realloc_r
- .text          0x0200e5bc       0xdc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-sccl.o)
-                0x0200e5bc                __sccl
- .text          0x0200e698       0x6c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcasecmp.o)
-                0x0200e698                strcasecmp
- .text          0x0200e704       0x84 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcat.o)
-                0x0200e704                strcat
- .text          0x0200e788      0x160 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strchr.o)
-                0x0200e788                strchr
- .text          0x0200e8e8      0x230 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcmp.o)
-                0x0200e8e8                strcmp
- .text          0x0200eb18       0xf0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcpy.o)
-                0x0200eb18                strcpy
- .text          0x0200ec08       0x48 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strlcpy.o)
-                0x0200ec08                strlcpy
- .text          0x0200ec50       0x94 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncasecmp.o)
-                0x0200ec50                strncasecmp
- .text          0x0200ece4      0x118 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncmp.o)
-                0x0200ece4                strncmp
- .text          0x0200edfc       0xe4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncpy.o)
-                0x0200edfc                strncpy
- .text          0x0200eee0      0x2c8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoll_r.o)
-                0x0200eee0                _strtoll_r
- .text          0x0200f1a8      0x204 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtol.o)
-                0x0200f1a8                _strtol_r
-                0x0200f384                strtol
- *fill*         0x0200f3ac        0x4 ff
- .text          0x0200f3b0      0x270 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoull_r.o)
-                0x0200f3b0                _strtoull_r
- .text          0x0200f620      0x1f4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoul.o)
-                0x0200f620                _strtoul_r
-                0x0200f7ec                strtoul
- .text          0x0200f814     0x38b4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiprintf.o)
-                0x02010074                __ssprint_r
-                0x02010224                _svfiprintf_r
- .text          0x020130c8      0x140 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wbuf.o)
-                0x020130c8                __swbuf_r
-                0x020131f0                __swbuf
- .text          0x02013208      0x1dc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcsnrtombs.o)
-                0x02013208                _wcsnrtombs_r
-                0x0201339c                wcsnrtombs
- .text          0x020133e4      0x110 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fclose.o)
-                0x020133e4                _fclose_r
-                0x020134e0                fclose
- .text          0x020134f4       0xec /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-getenv_r.o)
-                0x020134f4                _findenv_r
-                0x020135c4                _getenv_r
- .text          0x020135e0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-environ.o)
- .text          0x020135e0        0x8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-envlock.o)
-                0x020135e0                __env_lock
-                0x020135e4                __env_unlock
- .text          0x020135e8      0x1c4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(iosupport.o)
-                0x020135e8                setDefaultDevice
-                0x02013600                FindDevice
-                0x020136b8                RemoveDevice
-                0x020136e8                AddDevice
-                0x02013784                GetDeviceOpTab
- .text          0x020137ac       0x74 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(close.o)
-                0x020137ac                _close_r
- .text          0x02013820       0x80 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(fstat.o)
-                0x02013820                _fstat_r
- .text          0x020138a0        0x8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(isatty.o)
-                0x020138a0                _isatty_r
- .text          0x020138a8       0x80 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(lseek.o)
-                0x020138a8                _lseek_r
- .text          0x02013928       0x80 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(read.o)
-                0x02013928                _read_r
- .text          0x020139a8       0x70 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(sbrk.o)
-                0x020139a8                _sbrk_r
- .text          0x02013a18       0x68 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(times.o)
-                0x02013a18                _times
-                0x02013a34                _times_r
-                0x02013a3c                _gettimeofday_r
- .text          0x02013a80       0x84 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(write.o)
-                0x02013a80                _write_r
- .text          0x02013b04        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(malloc_vars.o)
- .text          0x02013b04       0x80 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(build_argv.o)
-                0x02013b04                build_argv
- .text          0x02013b84        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(syscall_support.o)
- .text          0x02013b84       0xb0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(handle_manager.o)
-                0x02013b84                __release_handle
-                0x02013bbc                __alloc_handle
-                0x02013c18                __get_handle
- .text          0x02013c34      0x114 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_udivsi3.o)
-                0x02013c34                __udivsi3
-                0x02013c34                __aeabi_uidiv
-                0x02013d28                __aeabi_uidivmod
- .text          0x02013d48       0x3c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_aeabi_uldivmod.o)
-                0x02013d48                __aeabi_uldivmod
- .text          0x02013d84       0x84 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(bpabi.o)
-                0x02013d84                __gnu_ldivmod_helper
-                0x02013dc8                __gnu_uldivmod_helper
- .text          0x02013e08      0x178 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_divdi3.o)
-                0x02013e08                __divdi3
- .text          0x02013f80      0x120 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_udivdi3.o)
-                0x02013f80                __udivdi3
- .text          0x020140a0       0x28 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_clzdi2.o)
-                0x020140a0                __clzdi2
- .text          0x020140c8       0x48 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_clzsi2.o)
-                0x020140c8                __clzsi2
- .text          0x02014110       0x10 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-errno.o)
-                0x02014110                __errno
- .text          0x02014120        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtend.o
- .text          0x02014120        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtn.o
+                0x02000494                topScreenAndConsole()
+                0x020004d4                waitfor(int)
+                0x02000698                playPSG()
+                0x02000730                playNoise()
+ .text          0x020007c0        0x0 main.o
+ .text          0x020007c0        0x0 personalData.o
+ .text          0x020007c0     0x116c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+                0x02000a2c                nocash_write
+                0x02000aa4                con_write
+                0x02000fd8                consoleGetDefault
+                0x02000fe4                consoleLoadFont
+                0x0200134c                consoleInit
+                0x02001578                consoleSelect
+                0x02001588                consoleSetFont
+                0x020015a8                consoleDebugInit
+                0x020015fc                consoleDemoInit
+                0x02001804                consolePrintChar
+                0x020018fc                consoleClear
+                0x0200190c                consoleSetWindow
+ .text          0x0200192c       0xf4 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
+                0x0200192c                scanKeys
+                0x02001998                keysHeld
+                0x020019a4                keysDown
+                0x020019b4                keysDownRepeat
+                0x020019c4                keysSetRepeat
+                0x020019dc                keysUp
+                0x020019ec                keysCurrent
+ .text          0x02001a20      0x208 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
+                0x02001a20                micBufferHandler
+                0x02001a54                soundEnable
+                0x02001a64                soundDisable
+                0x02001a74                soundPlayPSG
+                0x02001aa8                soundPlayNoise
+                0x02001adc                soundPlaySample
+                0x02001b44                soundPause
+                0x02001b58                soundKill
+                0x02001b6c                soundResume
+                0x02001b80                soundSetVolume
+                0x02001b94                soundSetPan
+                0x02001ba4                soundSetFreq
+                0x02001bb8                soundSetWaveDuty
+                0x02001bcc                soundMicRecord
+                0x02001c18                soundMicOff
+ .text          0x02001c28      0x19c /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+                0x02001c28                initSystem
+ .text          0x02001dc4      0xcb8 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+                0x02002088                fifoSetValue32Handler
+                0x020020fc                fifoSendAddress
+                0x02002128                fifoSendValue32
+                0x02002164                fifoSendDatamsg
+                0x020021d8                fifoGetAddress
+                0x02002244                fifoSetAddressHandler
+                0x020022b8                fifoGetValue32
+                0x020022cc                fifoGetDatamsg
+                0x02002780                fifoSetDatamsgHandler
+                0x02002814                fifoCheckAddress
+                0x02002838                fifoCheckDatamsg
+                0x0200285c                fifoCheckDatamsgLength
+                0x0200288c                fifoCheckValue32
+                0x020028b0                fifoInit
+ .text          0x02002a7c      0x244 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+                0x02002a7c                irqDummy
+                0x02002a80                irqSet
+                0x02002aec                irqInit
+                0x02002b38                irqInitHandler
+                0x02002b68                irqEnable
+                0x02002bcc                irqDisable
+                0x02002c30                irqClear
+ .text          0x02002cc0       0x5c /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+                0x02002cc0                systemErrorExit
+                0x02002cc4                __libnds_exit
+ .text          0x02002d1c      0x1b4 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+                0x02002d1c                timerStart
+                0x02002d64                timerElapsed
+                0x02002d94                timerPause
+                0x02002dd4                timerStop
+                0x02002e10                cpuStartTiming
+                0x02002e4c                cpuGetTiming
+                0x02002e88                cpuEndTiming
+ .text          0x02002ed0      0x1b4 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+                0x02002ed0                __libnds_mpu_setup
+                0x02003010                memCached
+                0x02003028                memUncached
+ *fill*         0x02003084        0xc ff
+ .text          0x02003090       0x70 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
+                0x02003090                swiDelay
+                0x02003094                swiIntrWait
+                0x02003098                swiWaitForVBlank
+                0x0200309c                swiSleep
+                0x020030a0                swiChangeSoundBias
+                0x020030a4                swiDivide
+                0x020030a8                swiRemainder
+                0x020030ae                swiDivMod
+                0x020030ba                swiCopy
+                0x020030be                swiFastCopy
+                0x020030c2                swiSqrt
+                0x020030c6                swiCRC16
+                0x020030ca                swiIsDebugger
+                0x020030ce                swiUnpackBits
+                0x020030d2                swiDecompressLZSSWram
+                0x020030d6                swiDecompressLZSSVramNTR
+                0x020030da                swiDecompressLZSSVramTWL
+                0x020030de                swiDecompressHuffman
+                0x020030e2                swiDecompressRLEWram
+                0x020030e6                swiDecompressRLEVram
+                0x020030ea                swiWaitForIRQ
+                0x020030ee                swiDecodeDelta8
+                0x020030f2                swiDecodeDelta16
+                0x020030f6                swiSetHaltCR
+ .text          0x02003100       0xa4 /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
+                0x02003100                nocashWrite
+                0x02003102                nocashMessage
+ .text          0x020031a4        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ *fill*         0x020031a4        0xc ff
+ .text          0x020031b0       0x30 /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
+                0x020031b0                swiSoftReset
+ .text          0x020031e0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
+ .text          0x020031e0      0x3bc /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+                0x020031e0                bgIsText
+                0x020031ec                checkIfText
+                0x02003244                bgUpdate
+                0x02003338                bgInit_call
+                0x02003460                bgInitSub_call
+ .text          0x0200359c      0x140 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
+                0x0200359c                setSDcallback
+                0x020035a8                systemValueHandler
+                0x020035f0                systemMsgHandler
+                0x02003640                systemSleep
+                0x02003658                powerOn
+                0x02003684                powerOff
+                0x020036ac                ledBlink
+                0x020036bc                getBatteryLevel
+ .text          0x020036dc      0x3a8 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+                0x020036dc                asinComp
+                0x02003700                sinLutLookup
+                0x02003738                sinLerp
+                0x020037c8                cosLerp
+                0x02003884                tanLutLookup
+                0x020038bc                tanLerp
+                0x02003964                asinLerp
+                0x020039e0                acosLerp
+                0x02003a5c                atanComp
+ .text          0x02003a84      0x1f8 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
+                0x02003a84                vramSetPrimaryBanks
+                0x02003ac8                vramSetMainBanks
+                0x02003b0c                vramSetBanks_EFG
+                0x02003b44                vramRestorePrimaryBanks
+                0x02003b50                vramRestoreMainBanks
+                0x02003b5c                vramRestoreBanks_EFG
+                0x02003b68                setBrightness
+                0x02003ba8                vramDefault
+ .text          0x02003c7c      0x148 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_divsi3.o)
+                0x02003c7c                __aeabi_idiv
+                0x02003c7c                __divsi3
+                0x02003da4                __aeabi_idivmod
+ .text          0x02003dc4        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_dvmd_tls.o)
+                0x02003dc4                __aeabi_ldiv0
+                0x02003dc4                __aeabi_idiv0
+ .text          0x02003dc8       0x84 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-bsearch.o)
+                0x02003dc8                bsearch
+ .text          0x02003e4c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
+ .text          0x02003e4c       0x80 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-init.o)
+                0x02003e4c                __libc_init_array
+ .text          0x02003ecc       0x74 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-iprintf.o)
+                0x02003ecc                iprintf
+                0x02003f0c                _iprintf_r
+ .text          0x02003f40       0xf0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memcpy-stub.o)
+                0x02003f40                memcpy
+ .text          0x02004030      0x174 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-setvbuf.o)
+                0x02004030                setvbuf
+ .text          0x020041a4      0x100 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-siscanf.o)
+                0x020041a4                siscanf
+                0x02004224                _siscanf_r
+ .text          0x020042a4       0xd8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-stdio.o)
+                0x020042a4                __sread
+                0x020042d8                __seofread
+                0x020042e0                __swrite
+                0x02004338                __sseek
+                0x02004368                __sclose
+ .text          0x0200437c       0x60 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strlen.o)
+                0x0200437c                strlen
+ .text          0x020043dc     0x237c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiscanf.o)
+                0x020043dc                _sungetc_r
+                0x020044d0                __ssrefill_r
+                0x0200453c                _sfread_r
+                0x02004614                __ssvfiscanf_r
+ .text          0x02006758      0x24c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ungetc.o)
+                0x02006758                __submore
+                0x02006808                _ungetc_r
+                0x0200698c                ungetc
+ .text          0x020069a4     0x3c00 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-vfiprintf.o)
+                0x020072b0                __sprint_r
+                0x020072c8                _vfiprintf_r
+                0x0200a4d0                vfiprintf
+ .text          0x0200a5a4      0x138 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcrtomb.o)
+                0x0200a5a4                _wcrtomb_r
+                0x0200a63c                wcrtomb
+ .text          0x0200a6dc       0x60 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcsrtombs.o)
+                0x0200a6dc                _wcsrtombs_r
+                0x0200a700                wcsrtombs
+ .text          0x0200a73c      0x3cc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wctomb_r.o)
+                0x0200a73c                __utf8_wctomb
+                0x0200a850                _wctomb_r
+                0x0200a8a0                __ascii_wctomb
+                0x0200a8c8                __sjis_wctomb
+                0x0200a954                __eucjp_wctomb
+                0x0200aa28                __jis_wctomb
+ .text          0x0200ab08      0x160 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wsetup.o)
+                0x0200ab08                __swsetup_r
+ .text          0x0200ac68       0x18 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ctype_.o)
+                0x0200ac68                __set_ctype
+ .text          0x0200ac80      0x2d0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fflush.o)
+                0x0200ac80                __sflush_r
+                0x0200aec0                _fflush_r
+                0x0200af14                fflush
+ .text          0x0200af50      0x350 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-findfp.o)
+                0x0200af60                _cleanup_r
+                0x0200b0d8                __sfmoreglue
+                0x0200b128                __sfp
+                0x0200b214                _cleanup
+                0x0200b238                __sinit
+                0x0200b248                __sfp_lock_acquire
+                0x0200b24c                __sfp_lock_release
+                0x0200b250                __sinit_lock_acquire
+                0x0200b254                __sinit_lock_release
+                0x0200b258                __fp_lock_all
+                0x0200b27c                __fp_unlock_all
+ .text          0x0200b2a0      0x190 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fputwc.o)
+                0x0200b2a0                _fputwc_r
+                0x0200b3ec                fputwc
+ .text          0x0200b430      0x3bc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-freer.o)
+                0x0200b430                _malloc_trim_r
+                0x0200b530                _free_r
+ .text          0x0200b7ec      0x4ec /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fvwrite.o)
+                0x0200b7ec                __sfvwrite_r
+ .text          0x0200bcd8      0x110 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fwalk.o)
+                0x0200bcd8                _fwalk
+                0x0200bd5c                _fwalk_reent
+ .text          0x0200bde8       0x7c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-iswspace.o)
+                0x0200bde8                iswspace
+ .text          0x0200be64      0x280 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-jp2uc.o)
+                0x0200c068                _jp2uc
+ .text          0x0200c0e4      0xd40 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-locale.o)
+                0x0200cab4                _setlocale_r
+                0x0200cdbc                __locale_charset
+                0x0200cdc8                __locale_mb_cur_max
+                0x0200cdd8                __locale_msgcharset
+                0x0200cde4                __locale_cjk_lang
+                0x0200cdf4                _localeconv_r
+                0x0200ce00                setlocale
+                0x0200ce18                localeconv
+ .text          0x0200ce24      0x168 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-makebuf.o)
+                0x0200ce24                __smakebuf_r
+ .text          0x0200cf8c       0x40 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-malloc.o)
+                0x0200cf8c                malloc
+                0x0200cfac                free
+ .text          0x0200cfcc      0x724 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mallocr.o)
+                0x0200cfcc                _malloc_r
+ .text          0x0200d6f0      0x14c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbrtowc.o)
+                0x0200d6f0                _mbrtowc_r
+                0x0200d794                mbrtowc
+ .text          0x0200d83c      0x784 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbtowc_r.o)
+                0x0200d83c                __utf8_mbtowc
+                0x0200db40                _mbtowc_r
+                0x0200db94                __ascii_mbtowc
+                0x0200dbe0                __sjis_mbtowc
+                0x0200dcbc                __eucjp_mbtowc
+                0x0200de0c                __jis_mbtowc
+ .text          0x0200dfc0      0x118 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memchr-stub.o)
+                0x0200dfc0                memchr
+ .text          0x0200e0d8      0x12c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memmove.o)
+                0x0200e0d8                memmove
+ .text          0x0200e204       0xf4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memset.o)
+                0x0200e204                memset
+ .text          0x0200e2f8        0x8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mlock.o)
+                0x0200e2f8                __malloc_lock
+                0x0200e2fc                __malloc_unlock
+ .text          0x0200e300      0x4dc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-reallocr.o)
+                0x0200e300                _realloc_r
+ .text          0x0200e7dc       0xdc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-sccl.o)
+                0x0200e7dc                __sccl
+ .text          0x0200e8b8       0x6c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcasecmp.o)
+                0x0200e8b8                strcasecmp
+ .text          0x0200e924       0x84 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcat.o)
+                0x0200e924                strcat
+ .text          0x0200e9a8      0x160 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strchr.o)
+                0x0200e9a8                strchr
+ .text          0x0200eb08      0x230 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcmp.o)
+                0x0200eb08                strcmp
+ .text          0x0200ed38       0xf0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcpy.o)
+                0x0200ed38                strcpy
+ .text          0x0200ee28       0x48 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strlcpy.o)
+                0x0200ee28                strlcpy
+ .text          0x0200ee70       0x94 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncasecmp.o)
+                0x0200ee70                strncasecmp
+ .text          0x0200ef04      0x118 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncmp.o)
+                0x0200ef04                strncmp
+ .text          0x0200f01c       0xe4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncpy.o)
+                0x0200f01c                strncpy
+ .text          0x0200f100      0x2c8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoll_r.o)
+                0x0200f100                _strtoll_r
+ .text          0x0200f3c8      0x204 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtol.o)
+                0x0200f3c8                _strtol_r
+                0x0200f5a4                strtol
+ *fill*         0x0200f5cc        0x4 ff
+ .text          0x0200f5d0      0x270 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoull_r.o)
+                0x0200f5d0                _strtoull_r
+ .text          0x0200f840      0x1f4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoul.o)
+                0x0200f840                _strtoul_r
+                0x0200fa0c                strtoul
+ .text          0x0200fa34     0x38b4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiprintf.o)
+                0x02010294                __ssprint_r
+                0x02010444                _svfiprintf_r
+ .text          0x020132e8      0x140 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wbuf.o)
+                0x020132e8                __swbuf_r
+                0x02013410                __swbuf
+ .text          0x02013428      0x1dc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcsnrtombs.o)
+                0x02013428                _wcsnrtombs_r
+                0x020135bc                wcsnrtombs
+ .text          0x02013604      0x110 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fclose.o)
+                0x02013604                _fclose_r
+                0x02013700                fclose
+ .text          0x02013714       0xec /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-getenv_r.o)
+                0x02013714                _findenv_r
+                0x020137e4                _getenv_r
+ .text          0x02013800        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-environ.o)
+ .text          0x02013800        0x8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-envlock.o)
+                0x02013800                __env_lock
+                0x02013804                __env_unlock
+ .text          0x02013808      0x1c4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(iosupport.o)
+                0x02013808                setDefaultDevice
+                0x02013820                FindDevice
+                0x020138d8                RemoveDevice
+                0x02013908                AddDevice
+                0x020139a4                GetDeviceOpTab
+ .text          0x020139cc       0x74 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(close.o)
+                0x020139cc                _close_r
+ .text          0x02013a40       0x80 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(fstat.o)
+                0x02013a40                _fstat_r
+ .text          0x02013ac0        0x8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(isatty.o)
+                0x02013ac0                _isatty_r
+ .text          0x02013ac8       0x80 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(lseek.o)
+                0x02013ac8                _lseek_r
+ .text          0x02013b48       0x80 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(read.o)
+                0x02013b48                _read_r
+ .text          0x02013bc8       0x70 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(sbrk.o)
+                0x02013bc8                _sbrk_r
+ .text          0x02013c38       0x68 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(times.o)
+                0x02013c38                _times
+                0x02013c54                _times_r
+                0x02013c5c                _gettimeofday_r
+ .text          0x02013ca0       0x84 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(write.o)
+                0x02013ca0                _write_r
+ .text          0x02013d24        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(malloc_vars.o)
+ .text          0x02013d24       0x80 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(build_argv.o)
+                0x02013d24                build_argv
+ .text          0x02013da4        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(syscall_support.o)
+ .text          0x02013da4       0xb0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(handle_manager.o)
+                0x02013da4                __release_handle
+                0x02013ddc                __alloc_handle
+                0x02013e38                __get_handle
+ .text          0x02013e54      0x114 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_udivsi3.o)
+                0x02013e54                __udivsi3
+                0x02013e54                __aeabi_uidiv
+                0x02013f48                __aeabi_uidivmod
+ .text          0x02013f68       0x3c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_aeabi_uldivmod.o)
+                0x02013f68                __aeabi_uldivmod
+ .text          0x02013fa4       0x84 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(bpabi.o)
+                0x02013fa4                __gnu_ldivmod_helper
+                0x02013fe8                __gnu_uldivmod_helper
+ .text          0x02014028      0x178 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_divdi3.o)
+                0x02014028                __divdi3
+ .text          0x020141a0      0x120 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_udivdi3.o)
+                0x020141a0                __udivdi3
+ .text          0x020142c0       0x28 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_clzdi2.o)
+                0x020142c0                __clzdi2
+ .text          0x020142e8       0x48 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_clzsi2.o)
+                0x020142e8                __clzsi2
+ .text          0x02014330       0x10 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-errno.o)
+                0x02014330                __errno
+ .text          0x02014340        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtend.o
+ .text          0x02014340        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtn.o
  *(.text.*)
- .text.startup  0x02014120      0x114 main.o
-                0x02014120                main
- *fill*         0x02014234        0x4 ff
+ .text.startup  0x02014340      0x114 main.o
+                0x02014340                main
+ *fill*         0x02014454        0x4 ff
  .text.startup.__stub
-                0x02014238       0xf4 linker stubs
+                0x02014458      0x118 linker stubs
  *(.stub)
  *(.gnu.warning)
  *(.gnu.linkonce.t*)
@@ -654,320 +655,320 @@ Linker script and memory map
  .glue_7        0x00000000        0x0 linker stubs
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
-                0x0201432c                . = ALIGN (0x4)
+                0x02014570                . = ALIGN (0x4)
 
-.vfp11_veneer   0x02014368        0x0
+.vfp11_veneer   0x020145b8        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x02014368        0x0
+.v4_bx          0x020145b8        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x02014368        0x0
+.iplt           0x020145b8        0x0
  .iplt          0x00000000        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/ds_arm9_crt0.o
 
-.fini           0x02014368       0x18
+.fini           0x020145b8       0x18
  *(.fini)
- .fini          0x02014368        0xc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crti.o
-                0x02014368                _fini
- .fini          0x02014374        0xc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtn.o
-                0x02014380                __text_end = .
+ .fini          0x020145b8        0xc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crti.o
+                0x020145b8                _fini
+ .fini          0x020145c4        0xc /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtn.o
+                0x020145d0                __text_end = .
 
-.rodata         0x02014380     0x6088
+.rodata         0x020145d0     0x6160
  *(.rodata)
- .rodata        0x02014380      0x200 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
- .rodata        0x02014580     0x2004 /home/markholland/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
-                0x02014580                default_font_bin
-                0x02016580                default_font_bin_end
-                0x02016580                default_font_bin_size
- .rodata        0x02016584      0x308 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
-                0x02016584                SIN_LUT
-                0x02016688                TAN_LUT
- .rodata        0x0201688c        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
-                0x0201688c                _global_impure_ptr
- .rodata        0x02016890       0x24 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiscanf.o)
- .rodata        0x020168b4       0x20 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-vfiprintf.o)
- .rodata        0x020168d4      0x104 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ctype_.o)
-                0x020168d4                _ctype_
- .rodata        0x020169d8     0x34d0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-jp2uc.o)
- .rodata        0x02019ea8       0x1c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-locale.o)
- .rodata        0x02019ec4       0x90 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbtowc_r.o)
- .rodata        0x02019f54      0x1f8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiprintf.o)
-                0x02019f54                __chclass
-                0x0201a054                __state_table
-                0x0201a0c0                __action_table
- .rodata        0x0201a14c       0x64 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(iosupport.o)
-                0x0201a14c                dotab_stdnull
+ .rodata        0x020145d0      0x200 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+ .rodata        0x020147d0     0x2004 /home/markholland/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
+                0x020147d0                default_font_bin
+                0x020167d0                default_font_bin_end
+                0x020167d0                default_font_bin_size
+ .rodata        0x020167d4      0x308 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+                0x020167d4                SIN_LUT
+                0x020168d8                TAN_LUT
+ .rodata        0x02016adc        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
+                0x02016adc                _global_impure_ptr
+ .rodata        0x02016ae0       0x24 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiscanf.o)
+ .rodata        0x02016b04       0x20 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-vfiprintf.o)
+ .rodata        0x02016b24      0x104 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ctype_.o)
+                0x02016b24                _ctype_
+ .rodata        0x02016c28     0x34d0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-jp2uc.o)
+ .rodata        0x0201a0f8       0x1c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-locale.o)
+ .rodata        0x0201a114       0x90 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbtowc_r.o)
+ .rodata        0x0201a1a4      0x1f8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiprintf.o)
+                0x0201a1a4                __chclass
+                0x0201a2a4                __state_table
+                0x0201a310                __action_table
+ .rodata        0x0201a39c       0x64 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(iosupport.o)
+                0x0201a39c                dotab_stdnull
  *all.rodata*(*)
  *(.roda)
  *(.rodata.*)
  .rodata.str1.4
-                0x0201a1b0       0x62 functions.o
-                                 0x64 (size before relaxing)
- *fill*         0x0201a212        0x2 ff
+                0x0201a400      0x138 functions.o
  .rodata.str1.4
-                0x0201a214       0x43 main.o
-                                 0x44 (size before relaxing)
- *fill*         0x0201a257        0x1 ff
+                0x0201a538       0x47 main.o
+                                 0x48 (size before relaxing)
+ *fill*         0x0201a57f        0x1 ff
  .rodata.str1.4
-                0x0201a258       0x4c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+                0x0201a580       0x4c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
  .rodata.str1.4
-                0x0201a2a4        0x2 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
+                0x0201a5cc        0x2 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
                                   0x4 (size before relaxing)
- *fill*         0x0201a2a6        0x2 ff
+ *fill*         0x0201a5ce        0x2 ff
  .rodata.str1.4
-                0x0201a2a8       0x2f /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-vfiprintf.o)
+                0x0201a5d0       0x2f /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-vfiprintf.o)
                                  0x30 (size before relaxing)
- *fill*         0x0201a2d7        0x1 ff
+ *fill*         0x0201a5ff        0x1 ff
  .rodata.str1.4
-                0x0201a2d8       0x12 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-jp2uc.o)
+                0x0201a600       0x12 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-jp2uc.o)
                                  0x14 (size before relaxing)
- *fill*         0x0201a2ea        0x2 ff
+ *fill*         0x0201a612        0x2 ff
  .rodata.str1.4
-                0x0201a2ec      0x112 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-locale.o)
+                0x0201a614      0x112 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-locale.o)
                                 0x130 (size before relaxing)
  .rodata.str1.4
                 0x00000000        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbrtowc.o)
  .rodata.str1.4
                 0x00000000       0x30 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiprintf.o)
- *fill*         0x0201a3fe        0x2 ff
+ *fill*         0x0201a726        0x2 ff
  .rodata.str1.4
-                0x0201a400        0x8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(iosupport.o)
+                0x0201a728        0x8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(iosupport.o)
  *(.gnu.linkonce.r*)
-                0x0201a408                . = ALIGN (0x4)
+                0x0201a730                . = ALIGN (0x4)
 
-.rel.dyn        0x0201a408        0x0
+.rel.dyn        0x0201a730        0x0
  .rel.iplt      0x00000000        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/ds_arm9_crt0.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0201a408                __exidx_start = .
+                0x0201a730                __exidx_start = .
 
 ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0201a408                __exidx_end = .
-                0x0201a408                . = ALIGN (0x4)
-                0x0201a408                PROVIDE (__preinit_array_start, .)
+                0x0201a730                __exidx_end = .
+                0x0201a730                . = ALIGN (0x4)
+                0x0201a730                PROVIDE (__preinit_array_start, .)
 
 .preinit_array
  *(.preinit_array)
-                0x0201a408                PROVIDE (__preinit_array_end, .)
-                0x0201a408                PROVIDE (__init_array_start, .)
+                0x0201a730                PROVIDE (__preinit_array_end, .)
+                0x0201a730                PROVIDE (__init_array_start, .)
 
-.init_array     0x0201a408        0x4
+.init_array     0x0201a730        0x4
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x0201a408        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
-                0x0201a40c                PROVIDE (__init_array_end, .)
-                0x0201a40c                PROVIDE (__fini_array_start, .)
+ .init_array    0x0201a730        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
+                0x0201a734                PROVIDE (__init_array_end, .)
+                0x0201a734                PROVIDE (__fini_array_start, .)
 
-.fini_array     0x0201a40c        0x4
+.fini_array     0x0201a734        0x4
  *(.fini_array)
- .fini_array    0x0201a40c        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
+ .fini_array    0x0201a734        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
  *(SORT(.fini_array.*))
-                0x0201a410                PROVIDE (__fini_array_end, .)
+                0x0201a738                PROVIDE (__fini_array_end, .)
 
-.ctors          0x0201a410        0x0
+.ctors          0x0201a738        0x0
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *(.ctors)
-                0x0201a410                . = ALIGN (0x4)
+                0x0201a738                . = ALIGN (0x4)
 
-.dtors          0x0201a410        0x0
+.dtors          0x0201a738        0x0
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
-                0x0201a410                . = ALIGN (0x4)
+                0x0201a738                . = ALIGN (0x4)
 
-.eh_frame       0x0201a410        0x4
+.eh_frame       0x0201a738        0x4
  *(.eh_frame)
- .eh_frame      0x0201a410        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
- .eh_frame      0x0201a410        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtend.o
-                0x0201a414                . = ALIGN (0x4)
+ .eh_frame      0x0201a738        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
+ .eh_frame      0x0201a738        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtend.o
+                0x0201a73c                . = ALIGN (0x4)
 
 .gcc_except_table
-                0x0201a414        0x0
+                0x0201a73c        0x0
  *(.gcc_except_table)
-                0x0201a414                . = ALIGN (0x4)
+                0x0201a73c                . = ALIGN (0x4)
 
-.jcr            0x0201a414        0x4
+.jcr            0x0201a73c        0x4
  *(.jcr)
- .jcr           0x0201a414        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
- .jcr           0x0201a414        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtend.o
+ .jcr           0x0201a73c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
+ .jcr           0x0201a73c        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtend.o
 
 .got
  *(.got.plt)
  *(.got)
  *(.rel.got)
 
-.ewram          0x0201a418        0x0
-                0x0201a418                __ewram_start = ABSOLUTE (.)
+.ewram          0x0201a740        0x0
+                0x0201a740                __ewram_start = ABSOLUTE (.)
  *(.ewram)
  *ewram.*(.text)
-                0x0201a418                . = ALIGN (0x4)
+                0x0201a740                . = ALIGN (0x4)
 
-.data           0x0201a418      0xb18
-                0x0201a418                __data_start = ABSOLUTE (.)
+.data           0x0201a740      0xb20
+                0x0201a740                __data_start = ABSOLUTE (.)
  *(.data)
- .data          0x0201a418        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/ds_arm9_crt0.o
- .data          0x0201a418        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crti.o
- .data          0x0201a418        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
-                0x0201a418                __dso_handle
- .data          0x0201a41c        0x8 functions.o
-                0x0201a41c                freq
-                0x0201a420                play
- .data          0x0201a424       0x24 main.o
-                0x0201a424                categories
-                0x0201a430                functions
- .data          0x0201a448        0x0 personalData.o
- .data          0x0201a448       0x64 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
-                0x0201a448                currentConsole
-                0x0201a44c                defaultConsole
- .data          0x0201a4ac        0x3 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
- .data          0x0201a4af        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
- .data          0x0201a4af        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
- *fill*         0x0201a4af        0x1 ff
- .data          0x0201a4b0       0x10 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
-                0x0201a4b0                fifo_buffer_free
-                0x0201a4b4                fifo_freewords
-                0x0201a4b8                fifo_send_queue
-                0x0201a4bc                fifo_receive_queue
- .data          0x0201a4c0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .data          0x0201a4c0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .data          0x0201a4c0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
- .data          0x0201a4c0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
- .data          0x0201a4c0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
- .data          0x0201a4c0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
- .data          0x0201a4c0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
- .data          0x0201a4c0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
- .data          0x0201a4c0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
- .data          0x0201a4c0       0x60 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
-                0x0201a4c0                bgScrollTable
-                0x0201a4e0                bgTransform
-                0x0201a500                bgControl
- .data          0x0201a520        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
- .data          0x0201a520        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
- .data          0x0201a520        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
- .data          0x0201a520        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_divsi3.o)
- .data          0x0201a520        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_dvmd_tls.o)
- .data          0x0201a520        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-bsearch.o)
- *fill*         0x0201a520        0x0 ff
- .data          0x0201a520      0x430 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
-                0x0201a520                _impure_ptr
- .data          0x0201a950        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-init.o)
- .data          0x0201a950        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-iprintf.o)
- .data          0x0201a950        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memcpy-stub.o)
- .data          0x0201a950        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-setvbuf.o)
- .data          0x0201a950        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-siscanf.o)
- .data          0x0201a950        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-stdio.o)
- .data          0x0201a950        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strlen.o)
- .data          0x0201a950        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiscanf.o)
- .data          0x0201a950        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ungetc.o)
- .data          0x0201a950        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-vfiprintf.o)
- .data          0x0201a950        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcrtomb.o)
- .data          0x0201a950        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcsrtombs.o)
- .data          0x0201a950        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wctomb_r.o)
-                0x0201a950                __wctomb
- .data          0x0201a954        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wsetup.o)
- .data          0x0201a954        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ctype_.o)
-                0x0201a954                __ctype_ptr__
- .data          0x0201a958        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fflush.o)
- .data          0x0201a958        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-findfp.o)
- .data          0x0201a958        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fputwc.o)
- .data          0x0201a958        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-freer.o)
- .data          0x0201a958        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fvwrite.o)
- .data          0x0201a958        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fwalk.o)
- .data          0x0201a958        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-iswspace.o)
- .data          0x0201a958        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-jp2uc.o)
- .data          0x0201a958      0x17c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-locale.o)
-                0x0201a958                __default_locale
-                0x0201aa78                __mb_cur_max
- .data          0x0201aad4        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-makebuf.o)
- .data          0x0201aad4        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-malloc.o)
- .data          0x0201aad4      0x410 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mallocr.o)
-                0x0201aad4                __malloc_av_
-                0x0201aedc                __malloc_sbrk_base
-                0x0201aee0                __malloc_trim_threshold
- .data          0x0201aee4        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbrtowc.o)
- .data          0x0201aee4        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbtowc_r.o)
-                0x0201aee4                __mbtowc
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memchr-stub.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memmove.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memset.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mlock.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-reallocr.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-sccl.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcasecmp.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcat.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strchr.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcmp.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcpy.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strlcpy.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncasecmp.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncmp.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncpy.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoll_r.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtol.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoull_r.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoul.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiprintf.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wbuf.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcsnrtombs.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fclose.o)
- .data          0x0201aee8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-getenv_r.o)
- .data          0x0201aee8        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-environ.o)
-                0x0201aee8                environ
- .data          0x0201aeec        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-envlock.o)
- .data          0x0201aeec       0x44 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(iosupport.o)
-                0x0201aef0                devoptab_list
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(close.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(fstat.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(isatty.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(lseek.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(read.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(sbrk.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(times.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(write.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(malloc_vars.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(build_argv.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(syscall_support.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(handle_manager.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_udivsi3.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_aeabi_uldivmod.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(bpabi.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_divdi3.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_udivdi3.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_clzdi2.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_clzsi2.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-errno.o)
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtend.o
- .data          0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtn.o
+ .data          0x0201a740        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/ds_arm9_crt0.o
+ .data          0x0201a740        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crti.o
+ .data          0x0201a740        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
+                0x0201a740                __dso_handle
+ .data          0x0201a744       0x10 functions.o
+                0x0201a744                freq
+                0x0201a748                volume
+                0x0201a74c                pan
+                0x0201a750                play
+ .data          0x0201a754       0x24 main.o
+                0x0201a754                categories
+                0x0201a760                soundPlayer
+ .data          0x0201a778        0x0 personalData.o
+ .data          0x0201a778       0x64 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+                0x0201a778                currentConsole
+                0x0201a77c                defaultConsole
+ .data          0x0201a7dc        0x3 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
+ .data          0x0201a7df        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
+ .data          0x0201a7df        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ *fill*         0x0201a7df        0x1 ff
+ .data          0x0201a7e0       0x10 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+                0x0201a7e0                fifo_buffer_free
+                0x0201a7e4                fifo_freewords
+                0x0201a7e8                fifo_send_queue
+                0x0201a7ec                fifo_receive_queue
+ .data          0x0201a7f0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .data          0x0201a7f0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .data          0x0201a7f0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+ .data          0x0201a7f0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+ .data          0x0201a7f0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
+ .data          0x0201a7f0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
+ .data          0x0201a7f0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ .data          0x0201a7f0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
+ .data          0x0201a7f0        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
+ .data          0x0201a7f0       0x60 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+                0x0201a7f0                bgScrollTable
+                0x0201a810                bgTransform
+                0x0201a830                bgControl
+ .data          0x0201a850        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
+ .data          0x0201a850        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+ .data          0x0201a850        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
+ .data          0x0201a850        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_divsi3.o)
+ .data          0x0201a850        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_dvmd_tls.o)
+ .data          0x0201a850        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-bsearch.o)
+ *fill*         0x0201a850        0x0 ff
+ .data          0x0201a850      0x430 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
+                0x0201a850                _impure_ptr
+ .data          0x0201ac80        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-init.o)
+ .data          0x0201ac80        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-iprintf.o)
+ .data          0x0201ac80        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memcpy-stub.o)
+ .data          0x0201ac80        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-setvbuf.o)
+ .data          0x0201ac80        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-siscanf.o)
+ .data          0x0201ac80        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-stdio.o)
+ .data          0x0201ac80        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strlen.o)
+ .data          0x0201ac80        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiscanf.o)
+ .data          0x0201ac80        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ungetc.o)
+ .data          0x0201ac80        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-vfiprintf.o)
+ .data          0x0201ac80        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcrtomb.o)
+ .data          0x0201ac80        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcsrtombs.o)
+ .data          0x0201ac80        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wctomb_r.o)
+                0x0201ac80                __wctomb
+ .data          0x0201ac84        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wsetup.o)
+ .data          0x0201ac84        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ctype_.o)
+                0x0201ac84                __ctype_ptr__
+ .data          0x0201ac88        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fflush.o)
+ .data          0x0201ac88        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-findfp.o)
+ .data          0x0201ac88        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fputwc.o)
+ .data          0x0201ac88        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-freer.o)
+ .data          0x0201ac88        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fvwrite.o)
+ .data          0x0201ac88        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fwalk.o)
+ .data          0x0201ac88        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-iswspace.o)
+ .data          0x0201ac88        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-jp2uc.o)
+ .data          0x0201ac88      0x17c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-locale.o)
+                0x0201ac88                __default_locale
+                0x0201ada8                __mb_cur_max
+ .data          0x0201ae04        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-makebuf.o)
+ .data          0x0201ae04        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-malloc.o)
+ .data          0x0201ae04      0x410 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mallocr.o)
+                0x0201ae04                __malloc_av_
+                0x0201b20c                __malloc_sbrk_base
+                0x0201b210                __malloc_trim_threshold
+ .data          0x0201b214        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbrtowc.o)
+ .data          0x0201b214        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbtowc_r.o)
+                0x0201b214                __mbtowc
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memchr-stub.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memmove.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memset.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mlock.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-reallocr.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-sccl.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcasecmp.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcat.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strchr.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcmp.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcpy.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strlcpy.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncasecmp.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncmp.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncpy.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoll_r.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtol.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoull_r.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoul.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiprintf.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wbuf.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcsnrtombs.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fclose.o)
+ .data          0x0201b218        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-getenv_r.o)
+ .data          0x0201b218        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-environ.o)
+                0x0201b218                environ
+ .data          0x0201b21c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-envlock.o)
+ .data          0x0201b21c       0x44 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(iosupport.o)
+                0x0201b220                devoptab_list
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(close.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(fstat.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(isatty.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(lseek.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(read.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(sbrk.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(times.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(write.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(malloc_vars.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(build_argv.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(syscall_support.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(handle_manager.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_udivsi3.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_aeabi_uldivmod.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(bpabi.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_divdi3.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_udivdi3.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_clzdi2.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_clzsi2.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-errno.o)
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtend.o
+ .data          0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtn.o
  *(.data.*)
  *(.gnu.linkonce.d*)
-                0x0201af30                . = ALIGN (0x4)
-                0x0201af30                __data_end = ABSOLUTE (.)
-                0x0201af30                __dtcm_lma = .
-                0x0201af30                __bss_vma = .
+                0x0201b260                . = ALIGN (0x4)
+                0x0201b260                __data_end = ABSOLUTE (.)
+                0x0201b260                __dtcm_lma = .
+                0x0201b260                __bss_vma = .
 
-.igot.plt       0x0201af30        0x0
+.igot.plt       0x0201b260        0x0
  .igot.plt      0x00000000        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/ds_arm9_crt0.o
 
 .tm_clone_table
-                0x0201af30        0x0
+                0x0201b260        0x0
  .tm_clone_table
-                0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
+                0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
  .tm_clone_table
-                0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtend.o
+                0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtend.o
 
-.dtcm           0x0b000000        0x0 load address 0x0201af30
+.dtcm           0x0b000000        0x0 load address 0x0201b260
  *(.dtcm)
  *(.dtcm.*)
                 0x0b000000                . = ALIGN (0x4)
                 0x0b000000                __dtcm_end = ABSOLUTE (.)
-                0x0201af30                __itcm_lma = (__dtcm_lma + SIZEOF (.dtcm))
+                0x0201b260                __itcm_lma = (__dtcm_lma + SIZEOF (.dtcm))
 
-.itcm           0x01000100      0x194 load address 0x0201af30
+.itcm           0x01000100      0x194 load address 0x0201b260
  *(.itcm)
  .itcm          0x01000100       0xc8 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
                 0x01000100                irqTable
@@ -976,9 +977,9 @@ ARM.exidx
  *itcm.*(.text)
                 0x01000294                . = ALIGN (0x4)
                 0x01000294                __itcm_end = ABSOLUTE (.)
-                0x0201b0c4                __vectors_lma = (__itcm_lma + SIZEOF (.itcm))
+                0x0201b3f4                __vectors_lma = (__itcm_lma + SIZEOF (.itcm))
 
-.vectors        0x01000000        0x0 load address 0x0201b0c4
+.vectors        0x01000000        0x0 load address 0x0201b3f4
  *(.vectors)
  *vectors.*(.text)
                 0x01000000                . = ALIGN (0x4)
@@ -991,158 +992,160 @@ ARM.exidx
                 0x0b000000                . = ALIGN (0x4)
                 0x0b000000                __sbss_end = ABSOLUTE (.)
 
-.bss            0x0201af30     0x1f34
-                0x0201af30                __bss_start = ABSOLUTE (.)
-                0x0201af30                __bss_start__ = ABSOLUTE (.)
+.bss            0x0201b260     0x1f3c
+                0x0201b260                __bss_start = ABSOLUTE (.)
+                0x0201b260                __bss_start__ = ABSOLUTE (.)
  *(.dynbss)
  *(.gnu.linkonce.b*)
  *(.bss*)
- .bss           0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/ds_arm9_crt0.o
- .bss           0x0201af30        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crti.o
- .bss           0x0201af30       0x1c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
- .bss           0x0201af4c        0x4 functions.o
-                0x0201af4c                channel
- .bss           0x0201af50        0x0 main.o
- .bss           0x0201af50        0x0 personalData.o
- .bss           0x0201af50        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
- .bss           0x0201af50        0x6 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
- *fill*         0x0201af56        0x2 
- .bss           0x0201af58        0x4 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
-                0x0201af58                micCallback
- .bss           0x0201af5c        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
- .bss           0x0201af5c        0x8 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
-                0x0201af60                processing
- .bss           0x0201af64        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .bss           0x0201af64        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .bss           0x0201af64        0xc /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
-                0x0201af64                elapsed
- .bss           0x0201af70        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
- .bss           0x0201af70        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
- .bss           0x0201af70        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
- .bss           0x0201af70        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
- .bss           0x0201af70        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
- .bss           0x0201af70        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
- .bss           0x0201af70        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
- .bss           0x0201af70        0x4 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_divsi3.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_dvmd_tls.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-bsearch.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-init.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-iprintf.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memcpy-stub.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-setvbuf.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-siscanf.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-stdio.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strlen.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiscanf.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ungetc.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-vfiprintf.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcrtomb.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcsrtombs.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wctomb_r.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wsetup.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ctype_.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fflush.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-findfp.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fputwc.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-freer.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fvwrite.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fwalk.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-iswspace.o)
- .bss           0x0201af74        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-jp2uc.o)
- .bss           0x0201af74      0x2b8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-locale.o)
-                0x0201b220                _PathLocale
-                0x0201b224                __mlocale_changed
-                0x0201b228                __nlocale_changed
- .bss           0x0201b22c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-makebuf.o)
- .bss           0x0201b22c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-malloc.o)
- .bss           0x0201b22c       0x34 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mallocr.o)
-                0x0201b22c                __malloc_top_pad
-                0x0201b230                __malloc_current_mallinfo
-                0x0201b258                __malloc_max_sbrked_mem
-                0x0201b25c                __malloc_max_total_mem
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbrtowc.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbtowc_r.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memchr-stub.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memmove.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memset.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mlock.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-reallocr.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-sccl.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcasecmp.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcat.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strchr.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcmp.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcpy.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strlcpy.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncasecmp.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncmp.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncpy.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoll_r.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtol.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoull_r.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoul.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiprintf.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wbuf.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcsnrtombs.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fclose.o)
- .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-getenv_r.o)
- .bss           0x0201b260        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-environ.o)
- .bss           0x0201b264        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-envlock.o)
- .bss           0x0201b264        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(iosupport.o)
- .bss           0x0201b264        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(close.o)
- .bss           0x0201b264        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(fstat.o)
- .bss           0x0201b264        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(isatty.o)
- .bss           0x0201b264        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(lseek.o)
- .bss           0x0201b264        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(read.o)
- .bss           0x0201b264        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(sbrk.o)
- .bss           0x0201b268        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(times.o)
- .bss           0x0201b268        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(write.o)
- .bss           0x0201b268        0x8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(malloc_vars.o)
-                0x0201b268                fake_heap_start
-                0x0201b26c                fake_heap_end
- .bss           0x0201b270        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(build_argv.o)
- .bss           0x0201b270        0x8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(syscall_support.o)
-                0x0201b270                __syscalls
- .bss           0x0201b278     0x1000 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(handle_manager.o)
- .bss           0x0201c278        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_udivsi3.o)
- .bss           0x0201c278        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_aeabi_uldivmod.o)
- .bss           0x0201c278        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(bpabi.o)
- .bss           0x0201c278        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_divdi3.o)
- .bss           0x0201c278        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_udivdi3.o)
- .bss           0x0201c278        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_clzdi2.o)
- .bss           0x0201c278        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_clzsi2.o)
- .bss           0x0201c278        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-errno.o)
- .bss           0x0201c278        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtend.o
- .bss           0x0201c278        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtn.o
+ .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/ds_arm9_crt0.o
+ .bss           0x0201b260        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crti.o
+ .bss           0x0201b260       0x1c /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
+ .bss           0x0201b27c        0xc functions.o
+                0x0201b27c                selected
+                0x0201b280                type
+                0x0201b284                channel
+ .bss           0x0201b288        0x0 main.o
+ .bss           0x0201b288        0x0 personalData.o
+ .bss           0x0201b288        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+ .bss           0x0201b288        0x6 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
+ *fill*         0x0201b28e        0x2 
+ .bss           0x0201b290        0x4 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
+                0x0201b290                micCallback
+ .bss           0x0201b294        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ .bss           0x0201b294        0x8 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+                0x0201b298                processing
+ .bss           0x0201b29c        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .bss           0x0201b29c        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .bss           0x0201b29c        0xc /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+                0x0201b29c                elapsed
+ .bss           0x0201b2a8        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+ .bss           0x0201b2a8        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
+ .bss           0x0201b2a8        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
+ .bss           0x0201b2a8        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ .bss           0x0201b2a8        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
+ .bss           0x0201b2a8        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(default_font.bin.o)
+ .bss           0x0201b2a8        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+ .bss           0x0201b2a8        0x4 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_divsi3.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_dvmd_tls.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-bsearch.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-init.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-iprintf.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memcpy-stub.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-setvbuf.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-siscanf.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-stdio.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strlen.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiscanf.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ungetc.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-vfiprintf.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcrtomb.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcsrtombs.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wctomb_r.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wsetup.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-ctype_.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fflush.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-findfp.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fputwc.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-freer.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fvwrite.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fwalk.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-iswspace.o)
+ .bss           0x0201b2ac        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-jp2uc.o)
+ .bss           0x0201b2ac      0x2b8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-locale.o)
+                0x0201b558                _PathLocale
+                0x0201b55c                __mlocale_changed
+                0x0201b560                __nlocale_changed
+ .bss           0x0201b564        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-makebuf.o)
+ .bss           0x0201b564        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-malloc.o)
+ .bss           0x0201b564       0x34 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mallocr.o)
+                0x0201b564                __malloc_top_pad
+                0x0201b568                __malloc_current_mallinfo
+                0x0201b590                __malloc_max_sbrked_mem
+                0x0201b594                __malloc_max_total_mem
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbrtowc.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mbtowc_r.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memchr-stub.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memmove.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-memset.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-mlock.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-reallocr.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-sccl.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcasecmp.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcat.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strchr.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcmp.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strcpy.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strlcpy.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncasecmp.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncmp.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strncpy.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoll_r.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtol.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoull_r.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-strtoul.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-svfiprintf.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wbuf.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-wcsnrtombs.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-fclose.o)
+ .bss           0x0201b598        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-getenv_r.o)
+ .bss           0x0201b598        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-environ.o)
+ .bss           0x0201b59c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-envlock.o)
+ .bss           0x0201b59c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(iosupport.o)
+ .bss           0x0201b59c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(close.o)
+ .bss           0x0201b59c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(fstat.o)
+ .bss           0x0201b59c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(isatty.o)
+ .bss           0x0201b59c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(lseek.o)
+ .bss           0x0201b59c        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(read.o)
+ .bss           0x0201b59c        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(sbrk.o)
+ .bss           0x0201b5a0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(times.o)
+ .bss           0x0201b5a0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(write.o)
+ .bss           0x0201b5a0        0x8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(malloc_vars.o)
+                0x0201b5a0                fake_heap_start
+                0x0201b5a4                fake_heap_end
+ .bss           0x0201b5a8        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(build_argv.o)
+ .bss           0x0201b5a8        0x8 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(syscall_support.o)
+                0x0201b5a8                __syscalls
+ .bss           0x0201b5b0     0x1000 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(handle_manager.o)
+ .bss           0x0201c5b0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_udivsi3.o)
+ .bss           0x0201c5b0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x0201c5b0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(bpabi.o)
+ .bss           0x0201c5b0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_divdi3.o)
+ .bss           0x0201c5b0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_udivdi3.o)
+ .bss           0x0201c5b0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_clzdi2.o)
+ .bss           0x0201c5b0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/libgcc.a(_clzsi2.o)
+ .bss           0x0201c5b0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libg.a(lib_a-errno.o)
+ .bss           0x0201c5b0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtend.o
+ .bss           0x0201c5b0        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtn.o
  *(COMMON)
- COMMON         0x0201c278       0x5c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
-                0x0201c278                currentCopy
- COMMON         0x0201c2d4        0x1 /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
-                0x0201c2d4                __dsimode
- *fill*         0x0201c2d5        0x3 
- COMMON         0x0201c2d8      0xa40 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
-                0x0201c2d8                fifo_datamsg_data
-                0x0201c318                fifo_buffer
-                0x0201cb18                fifo_value32_func
-                0x0201cb58                fifo_address_func
-                0x0201cb98                fifo_value32_data
-                0x0201cbd8                fifo_value32_queue
-                0x0201cc18                fifo_data_queue
-                0x0201cc58                fifo_address_data
-                0x0201cc98                fifo_datamsg_func
-                0x0201ccd8                fifo_address_queue
- COMMON         0x0201cd18      0x148 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
-                0x0201cd18                bgState
-                0x0201ce58                bgIsTextLut
- COMMON         0x0201ce60        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(times.o)
-                0x0201ce60                punixTime
-                0x0201ce64                . = ALIGN (0x4)
-                0x0201ce64                __bss_end__ = ABSOLUTE (.)
-                0x0201ce64                __end__ = ABSOLUTE (.)
+ COMMON         0x0201c5b0       0x5c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+                0x0201c5b0                currentCopy
+ COMMON         0x0201c60c        0x1 /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+                0x0201c60c                __dsimode
+ *fill*         0x0201c60d        0x3 
+ COMMON         0x0201c610      0xa40 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+                0x0201c610                fifo_datamsg_data
+                0x0201c650                fifo_buffer
+                0x0201ce50                fifo_value32_func
+                0x0201ce90                fifo_address_func
+                0x0201ced0                fifo_value32_data
+                0x0201cf10                fifo_value32_queue
+                0x0201cf50                fifo_data_queue
+                0x0201cf90                fifo_address_data
+                0x0201cfd0                fifo_datamsg_func
+                0x0201d010                fifo_address_queue
+ COMMON         0x0201d050      0x148 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+                0x0201d050                bgState
+                0x0201d190                bgIsTextLut
+ COMMON         0x0201d198        0x4 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/libsysbase.a(times.o)
+                0x0201d198                punixTime
+                0x0201d19c                . = ALIGN (0x4)
+                0x0201d19c                __bss_end__ = ABSOLUTE (.)
+                0x0201d19c                __end__ = ABSOLUTE (.)
 
 .stab
  *(.stab)
@@ -1528,138 +1531,138 @@ ARM.exidx
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0xaf66
+.debug_info     0x00000000     0xb094
  *(.debug_info)
- .debug_info    0x00000000     0x1383 functions.o
- .debug_info    0x00001383      0xf8b main.o
- .debug_info    0x0000230e     0x25b3 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
- .debug_info    0x000048c1      0x414 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
- .debug_info    0x00004cd5      0xb9a /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
- .debug_info    0x0000586f      0xf4e /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
- .debug_info    0x000067bd     0x1597 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
- .debug_info    0x00007d54      0x612 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .debug_info    0x00008366      0x327 /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .debug_info    0x0000868d      0x3f4 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
- .debug_info    0x00008a81       0xd0 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
- .debug_info    0x00008b51       0xcb /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
- .debug_info    0x00008c1c       0xcc /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
- .debug_info    0x00008ce8       0xd5 /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
- .debug_info    0x00008dbd       0xce /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
- .debug_info    0x00008e8b      0x99a /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
- .debug_info    0x00009825      0x92d /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
- .debug_info    0x0000a152      0x6e4 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
- .debug_info    0x0000a836      0x730 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
+ .debug_info    0x00000000     0x14b1 functions.o
+ .debug_info    0x000014b1      0xf8b main.o
+ .debug_info    0x0000243c     0x25b3 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+ .debug_info    0x000049ef      0x414 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
+ .debug_info    0x00004e03      0xb9a /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
+ .debug_info    0x0000599d      0xf4e /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ .debug_info    0x000068eb     0x1597 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+ .debug_info    0x00007e82      0x612 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .debug_info    0x00008494      0x327 /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .debug_info    0x000087bb      0x3f4 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+ .debug_info    0x00008baf       0xd0 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+ .debug_info    0x00008c7f       0xcb /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
+ .debug_info    0x00008d4a       0xcc /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
+ .debug_info    0x00008e16       0xd5 /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ .debug_info    0x00008eeb       0xce /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
+ .debug_info    0x00008fb9      0x99a /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+ .debug_info    0x00009953      0x92d /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
+ .debug_info    0x0000a280      0x6e4 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+ .debug_info    0x0000a964      0x730 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
 
-.debug_abbrev   0x00000000     0x24ca
+.debug_abbrev   0x00000000     0x24ac
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x33a functions.o
- .debug_abbrev  0x0000033a      0x2c8 main.o
- .debug_abbrev  0x00000602      0x53c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
- .debug_abbrev  0x00000b3e      0x16b /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
- .debug_abbrev  0x00000ca9      0x1d8 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
- .debug_abbrev  0x00000e81      0x2fa /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
- .debug_abbrev  0x0000117b      0x464 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
- .debug_abbrev  0x000015df      0x251 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .debug_abbrev  0x00001830      0x175 /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .debug_abbrev  0x000019a5      0x1fe /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
- .debug_abbrev  0x00001ba3       0x14 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
- .debug_abbrev  0x00001bb7       0x14 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
- .debug_abbrev  0x00001bcb       0x14 /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
- .debug_abbrev  0x00001bdf       0x14 /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
- .debug_abbrev  0x00001bf3       0x14 /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
- .debug_abbrev  0x00001c07      0x282 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
- .debug_abbrev  0x00001e89      0x268 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
- .debug_abbrev  0x000020f1      0x202 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
- .debug_abbrev  0x000022f3      0x1d7 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
+ .debug_abbrev  0x00000000      0x31c functions.o
+ .debug_abbrev  0x0000031c      0x2c8 main.o
+ .debug_abbrev  0x000005e4      0x53c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+ .debug_abbrev  0x00000b20      0x16b /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
+ .debug_abbrev  0x00000c8b      0x1d8 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
+ .debug_abbrev  0x00000e63      0x2fa /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ .debug_abbrev  0x0000115d      0x464 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+ .debug_abbrev  0x000015c1      0x251 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .debug_abbrev  0x00001812      0x175 /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .debug_abbrev  0x00001987      0x1fe /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+ .debug_abbrev  0x00001b85       0x14 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+ .debug_abbrev  0x00001b99       0x14 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
+ .debug_abbrev  0x00001bad       0x14 /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
+ .debug_abbrev  0x00001bc1       0x14 /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ .debug_abbrev  0x00001bd5       0x14 /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
+ .debug_abbrev  0x00001be9      0x282 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+ .debug_abbrev  0x00001e6b      0x268 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
+ .debug_abbrev  0x000020d3      0x202 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+ .debug_abbrev  0x000022d5      0x1d7 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
 
-.debug_line     0x00000000     0x3285
+.debug_line     0x00000000     0x3302
  *(.debug_line)
- .debug_line    0x00000000      0x2c3 functions.o
- .debug_line    0x000002c3      0x236 main.o
- .debug_line    0x000004f9        0x0 personalData.o
- .debug_line    0x000004f9      0x85c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
- .debug_line    0x00000d55      0x25b /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
- .debug_line    0x00000fb0      0x287 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
- .debug_line    0x00001237      0x37d /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
- .debug_line    0x000015b4      0x6b1 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
- .debug_line    0x00001c65      0x2b0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .debug_line    0x00001f15      0x1ea /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .debug_line    0x000020ff      0x1fc /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
- .debug_line    0x000022fb      0x107 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
- .debug_line    0x00002402       0xc9 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
- .debug_line    0x000024cb       0xa5 /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
- .debug_line    0x00002570       0xcd /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
- .debug_line    0x0000263d       0x9d /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
- .debug_line    0x000026da      0x352 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
- .debug_line    0x00002a2c      0x2a4 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
- .debug_line    0x00002cd0      0x342 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
- .debug_line    0x00003012      0x273 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
+ .debug_line    0x00000000      0x340 functions.o
+ .debug_line    0x00000340      0x236 main.o
+ .debug_line    0x00000576        0x0 personalData.o
+ .debug_line    0x00000576      0x85c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+ .debug_line    0x00000dd2      0x25b /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
+ .debug_line    0x0000102d      0x287 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
+ .debug_line    0x000012b4      0x37d /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ .debug_line    0x00001631      0x6b1 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+ .debug_line    0x00001ce2      0x2b0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .debug_line    0x00001f92      0x1ea /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .debug_line    0x0000217c      0x1fc /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+ .debug_line    0x00002378      0x107 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+ .debug_line    0x0000247f       0xc9 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
+ .debug_line    0x00002548       0xa5 /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
+ .debug_line    0x000025ed       0xcd /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ .debug_line    0x000026ba       0x9d /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
+ .debug_line    0x00002757      0x352 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+ .debug_line    0x00002aa9      0x2a4 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
+ .debug_line    0x00002d4d      0x342 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+ .debug_line    0x0000308f      0x273 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
 
-.debug_frame    0x00000000      0xc64
+.debug_frame    0x00000000      0xc84
  *(.debug_frame)
- .debug_frame   0x00000000       0xbc functions.o
- .debug_frame   0x000000bc       0x38 main.o
- .debug_frame   0x000000f4      0x1b4 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
- .debug_frame   0x000002a8       0x8c /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
- .debug_frame   0x00000334      0x194 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
- .debug_frame   0x000004c8       0x28 /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
- .debug_frame   0x000004f0      0x2bc /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
- .debug_frame   0x000007ac       0xb0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .debug_frame   0x0000085c       0x3c /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .debug_frame   0x00000898       0xc4 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
- .debug_frame   0x0000095c       0xac /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
- .debug_frame   0x00000a08       0xc8 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
- .debug_frame   0x00000ad0       0xd8 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
- .debug_frame   0x00000ba8       0xbc /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
+ .debug_frame   0x00000000       0xdc functions.o
+ .debug_frame   0x000000dc       0x38 main.o
+ .debug_frame   0x00000114      0x1b4 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+ .debug_frame   0x000002c8       0x8c /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
+ .debug_frame   0x00000354      0x194 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
+ .debug_frame   0x000004e8       0x28 /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ .debug_frame   0x00000510      0x2bc /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+ .debug_frame   0x000007cc       0xb0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .debug_frame   0x0000087c       0x3c /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .debug_frame   0x000008b8       0xc4 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+ .debug_frame   0x0000097c       0xac /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+ .debug_frame   0x00000a28       0xc8 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
+ .debug_frame   0x00000af0       0xd8 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+ .debug_frame   0x00000bc8       0xbc /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
 
-.debug_str      0x00000000     0x39b8
+.debug_str      0x00000000     0x39e2
  *(.debug_str)
- .debug_str     0x00000000      0xe13 functions.o
-                                0xf33 (size before relaxing)
- .debug_str     0x00000e13       0xc3 main.o
-                                0xbbe (size before relaxing)
- .debug_str     0x00000ed6       0x40 personalData.o
+ .debug_str     0x00000000      0xe7b functions.o
+                                0xf9b (size before relaxing)
+ .debug_str     0x00000e7b       0xbc main.o
+                                0xbc0 (size before relaxing)
+ .debug_str     0x00000f37       0x40 personalData.o
                                  0xa7 (size before relaxing)
- .debug_str     0x00000f16      0xaee /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+ .debug_str     0x00000f77      0xae8 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
                                0x115d (size before relaxing)
- .debug_str     0x00001a04      0x165 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
+ .debug_str     0x00001a5f      0x165 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
                                 0x392 (size before relaxing)
- .debug_str     0x00001b69      0x4e1 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
+ .debug_str     0x00001bc4      0x4b0 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
                                 0x722 (size before relaxing)
- .debug_str     0x0000204a      0x2a9 /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ .debug_str     0x00002074      0x2a9 /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
                                 0xaa7 (size before relaxing)
- .debug_str     0x000022f3      0x529 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+ .debug_str     0x0000231d      0x529 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
                                 0x832 (size before relaxing)
- .debug_str     0x0000281c      0x114 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .debug_str     0x00002846      0x114 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
                                 0x41b (size before relaxing)
- .debug_str     0x00002930      0x1bc /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .debug_str     0x0000295a      0x1bc /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
                                 0x35f (size before relaxing)
- .debug_str     0x00002aec       0xc2 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+ .debug_str     0x00002b16       0xc2 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
                                 0x29f (size before relaxing)
- .debug_str     0x00002bae      0x2d6 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+ .debug_str     0x00002bd8      0x2d6 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
                                 0x723 (size before relaxing)
- .debug_str     0x00002e84      0x12a /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
+ .debug_str     0x00002eae      0x12a /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
                                 0x68c (size before relaxing)
- .debug_str     0x00002fae      0x104 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+ .debug_str     0x00002fd8      0x104 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
                                 0x27e (size before relaxing)
- .debug_str     0x000030b2      0x906 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
+ .debug_str     0x000030dc      0x906 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
                                 0xbe1 (size before relaxing)
 
-.debug_loc      0x00000000     0x4a30
+.debug_loc      0x00000000     0x4a64
  *(.debug_loc)
- .debug_loc     0x00000000       0x2c functions.o
- .debug_loc     0x0000002c      0x14d main.o
- .debug_loc     0x00000179     0x185d /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
- .debug_loc     0x000019d6      0x522 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
- .debug_loc     0x00001ef8       0x44 /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
- .debug_loc     0x00001f3c     0x1128 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
- .debug_loc     0x00003064      0x110 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .debug_loc     0x00003174       0x58 /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .debug_loc     0x000031cc      0x287 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
- .debug_loc     0x00003453      0x440 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
- .debug_loc     0x00003893      0x1c4 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
- .debug_loc     0x00003a57      0xdb9 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
- .debug_loc     0x00004810      0x220 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
+ .debug_loc     0x00000000       0x60 functions.o
+ .debug_loc     0x00000060      0x14d main.o
+ .debug_loc     0x000001ad     0x185d /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+ .debug_loc     0x00001a0a      0x522 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
+ .debug_loc     0x00001f2c       0x44 /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ .debug_loc     0x00001f70     0x1128 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+ .debug_loc     0x00003098      0x110 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .debug_loc     0x000031a8       0x58 /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .debug_loc     0x00003200      0x287 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+ .debug_loc     0x00003487      0x440 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+ .debug_loc     0x000038c7      0x1c4 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
+ .debug_loc     0x00003a8b      0xdb9 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+ .debug_loc     0x00004844      0x220 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1698,13 +1701,13 @@ LOAD /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/cr
 LOAD /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtn.o
 OUTPUT(/media/psf/Home/Documents/AEV/p4/tonos2/tonos2.elf elf32-littlearm)
 
-.debug_ranges   0x00000000      0xbf0
- .debug_ranges  0x00000000       0x90 functions.o
- .debug_ranges  0x00000090       0x28 main.o
- .debug_ranges  0x000000b8      0x4d0 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
- .debug_ranges  0x00000588      0x340 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
- .debug_ranges  0x000008c8       0xc0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .debug_ranges  0x00000988       0x18 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
- .debug_ranges  0x000009a0       0xd8 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
- .debug_ranges  0x00000a78      0x130 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
- .debug_ranges  0x00000ba8       0x48 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
+.debug_ranges   0x00000000      0xbe8
+ .debug_ranges  0x00000000       0x88 functions.o
+ .debug_ranges  0x00000088       0x28 main.o
+ .debug_ranges  0x000000b0      0x4d0 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+ .debug_ranges  0x00000580      0x340 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+ .debug_ranges  0x000008c0       0xc0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .debug_ranges  0x00000980       0x18 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+ .debug_ranges  0x00000998       0xd8 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+ .debug_ranges  0x00000a70      0x130 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+ .debug_ranges  0x00000ba0       0x48 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)

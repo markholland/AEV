@@ -24,7 +24,7 @@ struct Category
 };
 
 
-struct Demo functions[] =
+struct Demo soundPlayer[] =
 { 
 	{playPSG, "playPSG", "Play PSG"},
 	{playNoise, "playNoise", "Play Noise"}
@@ -33,7 +33,7 @@ struct Demo functions[] =
 
 struct Category categories[] = 
 {
-	{"Functions", functions, sizeof(functions) / sizeof(Demo)},
+	{"Sound player", soundPlayer, sizeof(soundPlayer) / sizeof(Demo)},
 };
 
 //---------------------------------------------------------------------------------
