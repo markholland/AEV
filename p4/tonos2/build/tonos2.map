@@ -258,92 +258,92 @@ Linker script and memory map
  .text          0x02000250        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/lib/ds_arm9_crt0.o
  .text          0x02000250        0x0 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crti.o
  .text          0x02000250      0x108 /home/markholland/devkitPro/devkitARM/bin/../lib/gcc/arm-none-eabi/4.9.2/crtbegin.o
- .text          0x02000358      0x468 functions.o
+ .text          0x02000358      0x46c functions.o
                 0x02000358                timerCallBack()
                 0x02000494                topScreenAndConsole()
                 0x020004d4                waitfor(int)
                 0x02000698                playPSG()
                 0x02000730                playNoise()
- .text          0x020007c0        0x0 main.o
- .text          0x020007c0        0x0 personalData.o
- .text          0x020007c0     0x116c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
-                0x02000a2c                nocash_write
-                0x02000aa4                con_write
-                0x02000fd8                consoleGetDefault
-                0x02000fe4                consoleLoadFont
-                0x0200134c                consoleInit
-                0x02001578                consoleSelect
-                0x02001588                consoleSetFont
-                0x020015a8                consoleDebugInit
-                0x020015fc                consoleDemoInit
-                0x02001804                consolePrintChar
-                0x020018fc                consoleClear
-                0x0200190c                consoleSetWindow
- .text          0x0200192c       0xf4 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
-                0x0200192c                scanKeys
-                0x02001998                keysHeld
-                0x020019a4                keysDown
-                0x020019b4                keysDownRepeat
-                0x020019c4                keysSetRepeat
-                0x020019dc                keysUp
-                0x020019ec                keysCurrent
- .text          0x02001a20      0x208 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
-                0x02001a20                micBufferHandler
-                0x02001a54                soundEnable
-                0x02001a64                soundDisable
-                0x02001a74                soundPlayPSG
-                0x02001aa8                soundPlayNoise
-                0x02001adc                soundPlaySample
-                0x02001b44                soundPause
-                0x02001b58                soundKill
-                0x02001b6c                soundResume
-                0x02001b80                soundSetVolume
-                0x02001b94                soundSetPan
-                0x02001ba4                soundSetFreq
-                0x02001bb8                soundSetWaveDuty
-                0x02001bcc                soundMicRecord
-                0x02001c18                soundMicOff
- .text          0x02001c28      0x19c /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
-                0x02001c28                initSystem
- .text          0x02001dc4      0xcb8 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
-                0x02002088                fifoSetValue32Handler
-                0x020020fc                fifoSendAddress
-                0x02002128                fifoSendValue32
-                0x02002164                fifoSendDatamsg
-                0x020021d8                fifoGetAddress
-                0x02002244                fifoSetAddressHandler
-                0x020022b8                fifoGetValue32
-                0x020022cc                fifoGetDatamsg
-                0x02002780                fifoSetDatamsgHandler
-                0x02002814                fifoCheckAddress
-                0x02002838                fifoCheckDatamsg
-                0x0200285c                fifoCheckDatamsgLength
-                0x0200288c                fifoCheckValue32
-                0x020028b0                fifoInit
- .text          0x02002a7c      0x244 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
-                0x02002a7c                irqDummy
-                0x02002a80                irqSet
-                0x02002aec                irqInit
-                0x02002b38                irqInitHandler
-                0x02002b68                irqEnable
-                0x02002bcc                irqDisable
-                0x02002c30                irqClear
- .text          0x02002cc0       0x5c /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
-                0x02002cc0                systemErrorExit
-                0x02002cc4                __libnds_exit
- .text          0x02002d1c      0x1b4 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
-                0x02002d1c                timerStart
-                0x02002d64                timerElapsed
-                0x02002d94                timerPause
-                0x02002dd4                timerStop
-                0x02002e10                cpuStartTiming
-                0x02002e4c                cpuGetTiming
-                0x02002e88                cpuEndTiming
- .text          0x02002ed0      0x1b4 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
-                0x02002ed0                __libnds_mpu_setup
-                0x02003010                memCached
-                0x02003028                memUncached
- *fill*         0x02003084        0xc ff
+ .text          0x020007c4        0x0 main.o
+ .text          0x020007c4        0x0 personalData.o
+ .text          0x020007c4     0x116c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+                0x02000a30                nocash_write
+                0x02000aa8                con_write
+                0x02000fdc                consoleGetDefault
+                0x02000fe8                consoleLoadFont
+                0x02001350                consoleInit
+                0x0200157c                consoleSelect
+                0x0200158c                consoleSetFont
+                0x020015ac                consoleDebugInit
+                0x02001600                consoleDemoInit
+                0x02001808                consolePrintChar
+                0x02001900                consoleClear
+                0x02001910                consoleSetWindow
+ .text          0x02001930       0xf4 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
+                0x02001930                scanKeys
+                0x0200199c                keysHeld
+                0x020019a8                keysDown
+                0x020019b8                keysDownRepeat
+                0x020019c8                keysSetRepeat
+                0x020019e0                keysUp
+                0x020019f0                keysCurrent
+ .text          0x02001a24      0x208 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
+                0x02001a24                micBufferHandler
+                0x02001a58                soundEnable
+                0x02001a68                soundDisable
+                0x02001a78                soundPlayPSG
+                0x02001aac                soundPlayNoise
+                0x02001ae0                soundPlaySample
+                0x02001b48                soundPause
+                0x02001b5c                soundKill
+                0x02001b70                soundResume
+                0x02001b84                soundSetVolume
+                0x02001b98                soundSetPan
+                0x02001ba8                soundSetFreq
+                0x02001bbc                soundSetWaveDuty
+                0x02001bd0                soundMicRecord
+                0x02001c1c                soundMicOff
+ .text          0x02001c2c      0x19c /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+                0x02001c2c                initSystem
+ .text          0x02001dc8      0xcb8 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+                0x0200208c                fifoSetValue32Handler
+                0x02002100                fifoSendAddress
+                0x0200212c                fifoSendValue32
+                0x02002168                fifoSendDatamsg
+                0x020021dc                fifoGetAddress
+                0x02002248                fifoSetAddressHandler
+                0x020022bc                fifoGetValue32
+                0x020022d0                fifoGetDatamsg
+                0x02002784                fifoSetDatamsgHandler
+                0x02002818                fifoCheckAddress
+                0x0200283c                fifoCheckDatamsg
+                0x02002860                fifoCheckDatamsgLength
+                0x02002890                fifoCheckValue32
+                0x020028b4                fifoInit
+ .text          0x02002a80      0x244 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+                0x02002a80                irqDummy
+                0x02002a84                irqSet
+                0x02002af0                irqInit
+                0x02002b3c                irqInitHandler
+                0x02002b6c                irqEnable
+                0x02002bd0                irqDisable
+                0x02002c34                irqClear
+ .text          0x02002cc4       0x5c /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+                0x02002cc4                systemErrorExit
+                0x02002cc8                __libnds_exit
+ .text          0x02002d20      0x1b4 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+                0x02002d20                timerStart
+                0x02002d68                timerElapsed
+                0x02002d98                timerPause
+                0x02002dd8                timerStop
+                0x02002e14                cpuStartTiming
+                0x02002e50                cpuGetTiming
+                0x02002e8c                cpuEndTiming
+ .text          0x02002ed4      0x1b4 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+                0x02002ed4                __libnds_mpu_setup
+                0x02003014                memCached
+                0x0200302c                memUncached
+ *fill*         0x02003088        0x8 ff
  .text          0x02003090       0x70 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
                 0x02003090                swiDelay
                 0x02003094                swiIntrWait
@@ -1531,27 +1531,27 @@ ARM.exidx
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0xb094
+.debug_info     0x00000000     0xb09d
  *(.debug_info)
- .debug_info    0x00000000     0x14b1 functions.o
- .debug_info    0x000014b1      0xf8b main.o
- .debug_info    0x0000243c     0x25b3 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
- .debug_info    0x000049ef      0x414 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
- .debug_info    0x00004e03      0xb9a /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
- .debug_info    0x0000599d      0xf4e /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
- .debug_info    0x000068eb     0x1597 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
- .debug_info    0x00007e82      0x612 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .debug_info    0x00008494      0x327 /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .debug_info    0x000087bb      0x3f4 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
- .debug_info    0x00008baf       0xd0 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
- .debug_info    0x00008c7f       0xcb /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
- .debug_info    0x00008d4a       0xcc /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
- .debug_info    0x00008e16       0xd5 /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
- .debug_info    0x00008eeb       0xce /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
- .debug_info    0x00008fb9      0x99a /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
- .debug_info    0x00009953      0x92d /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
- .debug_info    0x0000a280      0x6e4 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
- .debug_info    0x0000a964      0x730 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
+ .debug_info    0x00000000     0x14ba functions.o
+ .debug_info    0x000014ba      0xf8b main.o
+ .debug_info    0x00002445     0x25b3 /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+ .debug_info    0x000049f8      0x414 /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
+ .debug_info    0x00004e0c      0xb9a /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
+ .debug_info    0x000059a6      0xf4e /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ .debug_info    0x000068f4     0x1597 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+ .debug_info    0x00007e8b      0x612 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .debug_info    0x0000849d      0x327 /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .debug_info    0x000087c4      0x3f4 /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+ .debug_info    0x00008bb8       0xd0 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+ .debug_info    0x00008c88       0xcb /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
+ .debug_info    0x00008d53       0xcc /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
+ .debug_info    0x00008e1f       0xd5 /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ .debug_info    0x00008ef4       0xce /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
+ .debug_info    0x00008fc2      0x99a /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+ .debug_info    0x0000995c      0x92d /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
+ .debug_info    0x0000a289      0x6e4 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+ .debug_info    0x0000a96d      0x730 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
 
 .debug_abbrev   0x00000000     0x24ac
  *(.debug_abbrev)
@@ -1575,28 +1575,28 @@ ARM.exidx
  .debug_abbrev  0x000020d3      0x202 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
  .debug_abbrev  0x000022d5      0x1d7 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
 
-.debug_line     0x00000000     0x3302
+.debug_line     0x00000000     0x3301
  *(.debug_line)
- .debug_line    0x00000000      0x340 functions.o
- .debug_line    0x00000340      0x236 main.o
- .debug_line    0x00000576        0x0 personalData.o
- .debug_line    0x00000576      0x85c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
- .debug_line    0x00000dd2      0x25b /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
- .debug_line    0x0000102d      0x287 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
- .debug_line    0x000012b4      0x37d /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
- .debug_line    0x00001631      0x6b1 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
- .debug_line    0x00001ce2      0x2b0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
- .debug_line    0x00001f92      0x1ea /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
- .debug_line    0x0000217c      0x1fc /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
- .debug_line    0x00002378      0x107 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
- .debug_line    0x0000247f       0xc9 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
- .debug_line    0x00002548       0xa5 /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
- .debug_line    0x000025ed       0xcd /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
- .debug_line    0x000026ba       0x9d /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
- .debug_line    0x00002757      0x352 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
- .debug_line    0x00002aa9      0x2a4 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
- .debug_line    0x00002d4d      0x342 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
- .debug_line    0x0000308f      0x273 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
+ .debug_line    0x00000000      0x33f functions.o
+ .debug_line    0x0000033f      0x236 main.o
+ .debug_line    0x00000575        0x0 personalData.o
+ .debug_line    0x00000575      0x85c /home/markholland/devkitPro/libnds/lib/libnds9.a(console.o)
+ .debug_line    0x00000dd1      0x25b /home/markholland/devkitPro/libnds/lib/libnds9.a(keys.o)
+ .debug_line    0x0000102c      0x287 /home/markholland/devkitPro/libnds/lib/libnds9.a(sound.o)
+ .debug_line    0x000012b3      0x37d /home/markholland/devkitPro/libnds/lib/libnds9.a(initSystem.o)
+ .debug_line    0x00001630      0x6b1 /home/markholland/devkitPro/libnds/lib/libnds9.a(fifosystem.o)
+ .debug_line    0x00001ce1      0x2b0 /home/markholland/devkitPro/libnds/lib/libnds9.a(interrupts.o)
+ .debug_line    0x00001f91      0x1ea /home/markholland/devkitPro/libnds/lib/libnds9.a(libnds_exit.arm.o)
+ .debug_line    0x0000217b      0x1fc /home/markholland/devkitPro/libnds/lib/libnds9.a(timers.o)
+ .debug_line    0x00002377      0x107 /home/markholland/devkitPro/libnds/lib/libnds9.a(mpu_setup.o)
+ .debug_line    0x0000247e       0xc9 /home/markholland/devkitPro/libnds/lib/libnds9.a(biosCalls.o)
+ .debug_line    0x00002547       0xa5 /home/markholland/devkitPro/libnds/lib/libnds9.a(debugprint.o)
+ .debug_line    0x000025ec       0xcd /home/markholland/devkitPro/libnds/lib/libnds9.a(interruptDispatcher.o)
+ .debug_line    0x000026b9       0x9d /home/markholland/devkitPro/libnds/lib/libnds9.a(swiSoftReset.o)
+ .debug_line    0x00002756      0x352 /home/markholland/devkitPro/libnds/lib/libnds9.a(background.o)
+ .debug_line    0x00002aa8      0x2a4 /home/markholland/devkitPro/libnds/lib/libnds9.a(system.o)
+ .debug_line    0x00002d4c      0x342 /home/markholland/devkitPro/libnds/lib/libnds9.a(trig.o)
+ .debug_line    0x0000308e      0x273 /home/markholland/devkitPro/libnds/lib/libnds9.a(video.o)
 
 .debug_frame    0x00000000      0xc84
  *(.debug_frame)

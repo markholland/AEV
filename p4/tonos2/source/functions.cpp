@@ -112,6 +112,8 @@ void playNoise(void) {
 	topScreenAndConsole();
 
 	type = 1;
+
+	soundEnable();
 	
 	channel = soundPlayNoise(freq, volume, pan);
 	//calls the timerCallBack function 2 times per second.
