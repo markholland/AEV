@@ -243,10 +243,10 @@ void updateGraphics( void )
     REG_BG0HOFS = g_camera_x >> 8;
 }
 
-void processLogic( void ) {
+void processLogic( mm_sound_effect ball_bounce) {
 
     processInput();
-    ballUpdate( &g_ball );
+    ballUpdate( &g_ball, ball_bounce);
     updateCamera();
 }
 
@@ -257,7 +257,8 @@ int main( void )
 //-----------------------------------------------------------
 {
     // setup things
-    setupInterrupts();
+    //enabling interrupts causes audio not to be played
+    //setupInterrupts();
     setupGraphics();
     resetBall();
 
@@ -268,6 +269,8 @@ int main( void )
     
     // load the module
     mmLoad( MOD_FLATOUTLIES );
+
+    mmSetModuleVolume( 25 );
 
     // Start playing module
     mmStart( MOD_FLATOUTLIES, MM_PLAY_LOOP );
@@ -280,14 +283,14 @@ int main( void )
         (int)(1.0f * (1<<10)),  // rate
         0,      // handle
         255,    // volume
-        0,      // panning
+        128,      // panning
     };
 
     // start main loop
     while( 1 )
     {
         // update game logic
-        processLogic();
+        processLogic(ball_bounce);
 
         // wait for new frame
         swiWaitForVBlank();

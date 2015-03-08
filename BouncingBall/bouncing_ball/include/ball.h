@@ -1,4 +1,5 @@
 // ball.h
+#include <maxmod9.h>
 
 #ifndef BALL_H
 #define BALL_H
@@ -16,7 +17,7 @@ typedef struct t_ball
     int height; // height of ball
 } ball;
 
-void ballUpdate( ball* b );
+void ballUpdate( ball* b , mm_sound_effect ball_bounce);
 void ballRender( ball* b, int camera_x, int camera_y );
 
 #define c_gravity           80                 // gravity constant (add to vertical velocity) (*.8 fixed)

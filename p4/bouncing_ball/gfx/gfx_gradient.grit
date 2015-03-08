@@ -1,7 +1,0 @@
-# convert gradient graphic
-
-# the gradient has 16 colors
--pn16
-
-# the gradient is a 4-bit image
--gB4

@@ -1,12 +1,13 @@
 #include <nds.h>
 #include "ball.h"
+#include <maxmod9.h>
 
 #define c_radius (8<<8)
 
 //-----------------------------------------------------------------
 // update ball object (call once per frame)
 //-----------------------------------------------------------------
-void ballUpdate( ball* b )
+void ballUpdate( ball* b , mm_sound_effect ball_bounce)
 //-----------------------------------------------------------------
 {
     // add X velocity to X position
@@ -40,11 +41,13 @@ void ballUpdate( ball* b )
             b->yvel = -(b->yvel * (256-c_bounce_damper)) >> 8;
         
             // clamp Y to mininum velocity (minimum after bouncing, so the ball does not settle)
-            if( b->yvel > -min_yvel )
+            if( b->yvel > -min_yvel ) {
                 b->yvel = -min_yvel;
+                // add sound play
+                mmEffectEx(&ball_bounce);
+            }
 
 
-            // add sound play
         }
        
         // calculate the height

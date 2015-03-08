@@ -57,7 +57,9 @@ ball.o: \
  /home/markholland/devkitPro/libnds/include/nds/arm9/trig_lut.h \
  /home/markholland/devkitPro/libnds/include/nds/arm9/video.h \
  /home/markholland/devkitPro/libnds/include/nds/arm9/videoGL.h \
- /media/psf/Home/Documents/AEV/BouncingBall/bouncing_ball/include/ball.h
+ /media/psf/Home/Documents/AEV/BouncingBall/bouncing_ball/include/ball.h \
+ /home/markholland/devkitPro/libnds/include/maxmod9.h \
+ /home/markholland/devkitPro/libnds/include/mm_types.h
 
 /home/markholland/devkitPro/libnds/include/nds.h:
 
@@ -174,3 +176,7 @@ ball.o: \
 /home/markholland/devkitPro/libnds/include/nds/arm9/videoGL.h:
 
 /media/psf/Home/Documents/AEV/BouncingBall/bouncing_ball/include/ball.h:
+
+/home/markholland/devkitPro/libnds/include/maxmod9.h:
+
+/home/markholland/devkitPro/libnds/include/mm_types.h:
